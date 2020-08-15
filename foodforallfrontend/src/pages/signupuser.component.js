@@ -8,14 +8,57 @@ import makeAnimated from "react-select/animated";
 
 const animatedComponents = makeAnimated();
 
-const Countries = [
-  { label: "Albania", value: 355 },
-  { label: "Argentina", value: 54 },
-  { label: "Austria", value: 43 },
-  { label: "Cocos Islands", value: 61 },
-  { label: "Kuwait", value: 965 },
-  { label: "Sweden", value: 46 },
-  { label: "Venezuela", value: 58 },
+const States = [
+  {label: "Alabama"},
+  {label: "Alaska"},
+  {label: "Arizona"},
+  {label: "Arkansas"},
+  {label: "California"},
+  {label: "Colorado"},
+  {label: "Connecticut"},
+  {label: "Delaware"},
+  {label: "Florida"},
+  {label: "Georgia"},
+  {label: "Hawaii"},
+  {label: "Idaho"},
+  {label: "Illinois"},
+  {label: "Indiana"},
+  {label: "Iowa"},
+  {label: "Kansas"},
+  {label: "Kentucky"},
+  {label: "Louisiana"},
+  {label: "Maine"},
+  {label: "Maryland"},
+  {label: "Massachusetts"},
+  {label: "Michigan"},
+  {label: "Minnesota"},
+  {label: "Mississippi"},
+  {label: "Missouri"},
+  {label: "Montana"},
+  {label: "Nebraska"},
+  {label: "Nevada"},
+  {label: "New Hampshire"},
+  {label: "New Jersey"},
+  {label: "New Mexico"},
+  {label: "New York"},
+  {label: "North Carolina"},
+  {label: "North Dakota"},
+  {label: "Ohio"},
+  {label: "Oklahoma"},
+  {label: "Oregon"},
+  {label: "Pennsylvania"},
+  {label: "Rhode Island"},
+  {label: "South Carolina"},
+  {label: "South Dakota"},
+  {label: "Tennessee"},
+  {label: "Texas"},
+  {label: "Utah"},
+  {label: "Vermont"},
+  {label: "Virginia"},
+  {label: "Washington"},
+  {label: "West Virginia"},
+  {label: "Wisconsin"},
+  {label: "Wyoming"},
 ];
 
 export class signup extends Component {
@@ -141,7 +184,7 @@ export class signup extends Component {
           </div>
           <div>
             <Select
-              options={Countries}
+              options={States}
               components={animatedComponents}
               onChange={this.enterState}
               multiple={false}
