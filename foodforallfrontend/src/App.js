@@ -23,7 +23,6 @@ function App() {
       <Route path='/usersignup' exact component={signup} />
       <Route path='/banklogin' exact component={loginbank} />
       <Route path='/banksignup' exact component={signupbank} />
-
     </Router>
   );
 }

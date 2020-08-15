@@ -146,8 +146,8 @@ export class signup extends Component {
   render() {
     return (
       <div>
-        <h3>Sign Up</h3>
-        <form onSubmit={this.onSubmit}>
+        <h3 class="col-lg-6 offset-lg-3 ">Sign Up</h3>
+        <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3" >
           <div className="form-group">
             <label>Username: </label>
             <input

@@ -7,8 +7,6 @@ import makeAnimated from "react-select/animated";
 
 const animatedComponents = makeAnimated();
 
-const label = [];
-
 const Countries = [
   { label: "Albania"},
   { label: "Argentina"},
@@ -103,8 +101,8 @@ export class signupbank extends Component {
   render() {
     return (
       <div>
-        <h3>Sign Up-Food Bank</h3>
-        <form onSubmit={this.onSubmit}>
+        <h3 class="col-lg-6 offset-lg-3 ">Sign Up-Food Bank</h3>
+        <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
             <label>Username: </label>
             <input
