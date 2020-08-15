@@ -21,7 +21,7 @@ const bankSchema = new Schema({
         type: String, 
         required: true,
     },
-    state: {
+    stateLocation: {
         type: String,
         required: true,
     }

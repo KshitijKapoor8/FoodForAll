@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let Bank = require('../models/user.model');
+let Bank = require('../models/bank.model');
 
 router.route('/').get((req, res) => {
     Bank.find()
@@ -8,17 +8,29 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const name = req.body.name;
+    const bankName = req.body.bankName;
     const email = req.body.email;
     const password = req.body.password;
     const address = req.body.address;
-    const state = req.body.state;
+    const stateLocation = req.body.stateLocation;
 
-    const newUser = new User({name, email, password, address, state});
+    const newBank = new Bank({
+        bankName,
+        email,
+        password,
+        address,
+        stateLocation,
+      });
 
-    newUser.save()
-        .then(() => res.json('User added!'))
+    newBank.save()
+        .then(() => res.json('Bank added!'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
+
+router.route('/:id').get((req, res) => {
+    Bank.findById(req.params.id) 
+        .then(bank => res.json(bank))
+        .catch(err => res.status(400).json('Error: ' + err));
+})
 
 module.exports = router;
