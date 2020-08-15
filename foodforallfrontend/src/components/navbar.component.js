@@ -25,4 +25,4 @@ export default class navbar extends Component {
     }
 }
 
-export default navbar
+//export default navbar

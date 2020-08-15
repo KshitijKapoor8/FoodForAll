@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export class loginuser extends Component {
+export class loginbank extends Component {
   constructor(props) {
     super(props);
 
     this.onSubmit = this.onSubmit.bind(this);
     this.enterUsername = this.enterUsername.bind(this);
+    this.enterEmail = this.enterEmail.bind(this);
     this.enterPassword = this.enterPassword.bind(this);
 
     this.state = {
       username: "",
       password: "",
+      email: "",
       error: false
     };
   }
@@ -26,6 +28,12 @@ export class loginuser extends Component {
     this.setState({
       password: e.target.value,
     });
+  }
+
+  enterEmail(e) {
+    this.setState({
+        email: e.target.value,
+      });
   }
 
   onSubmit(e) {
@@ -68,6 +76,14 @@ export class loginuser extends Component {
               value={this.state.password}
               onChange={this.enterPassword}
             />
+            <label>Email: </label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              value={this.state.email}
+              onChange={this.enterEmail}
+            />
           </div>
           <div className="form-group">
             <input
@@ -82,4 +98,4 @@ export class loginuser extends Component {
   }
 }
 
-export default loginuser;
+export default loginbank;
