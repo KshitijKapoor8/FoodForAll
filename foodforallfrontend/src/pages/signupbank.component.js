@@ -7,8 +7,6 @@ import makeAnimated from "react-select/animated";
 
 const animatedComponents = makeAnimated();
 
-const label = [];
-
 const Countries = [
   { label: "Albania"},
   { label: "Argentina"},
@@ -59,8 +57,7 @@ export class signupbank extends Component {
   }
 
   enterState(optionSelected) {
-    label = optionSelected.label;
-    console.log(label)
+    const label = optionSelected.label;
     this.setState({
       stateLocation: label,
     });
