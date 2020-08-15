@@ -1,1 +1,1 @@
-npm install express mongoose cors react 
+npm install express mongoose cors react nodemon
