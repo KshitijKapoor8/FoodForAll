@@ -6,7 +6,7 @@ import Navbar from './components/navbar.component.js';
 import home from './pages/home.component.js';
 import finder from './pages/finder.component.js';
 import loginuser from './pages/loginuser.component.js';
-import signup from './pages/signup.component.js';
+import signup from './pages/signupuser.component.js';
 import donate from './pages/donate.component.js';
 
 function App() {

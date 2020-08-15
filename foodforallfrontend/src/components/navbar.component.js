@@ -7,7 +7,7 @@ export default class navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-                <Link to="/" className = "navbar-brand">FoodForAll</Link>
+                <a href="/" class = "navbar-brand mb-0 h4">FoodForAll</a>
                 <div className="collapse navbar-collapse">
                 <ul className="navbar-nav mr-auto">
                     <li className="navbar-item">
@@ -20,8 +20,12 @@ export default class navbar extends Component {
                             <a href="/banklogin" class="dropdown-item">Food Bank Login</a>
                         </div>
                     </li>
-                    <li className="navbar-item">
-                        <Link to="/Signup" className="nav-link">Sign Up</Link>
+                    <li className="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign Up</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href='/usersignup' class="dropdown-item">User Sign Up</a>
+                            <a href="/banksignup" class="dropdown-item">Food Bank Sign Up</a>
+                        </div>
                     </li>
                 </ul>
                 </div>
