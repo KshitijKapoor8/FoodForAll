@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
-import Dropdown from "react-dropdown";
+
 
 const animatedComponents = makeAnimated();
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 
@@ -9,8 +9,7 @@ export default class navbar extends Component {
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
                 <a href="/" class = "navbar-brand mb-0 h4">FoodForAll</a>
-                <div className="collapse navbar-collapse">
-                <ul className="navbar-nav mr-auto">
+                <ul className="nav navbar-nav navbar-right">
                     <li className="navbar-item">
                         <Link to="/Donate" className="nav-link">Donate</Link>
                     </li>
@@ -27,9 +26,8 @@ export default class navbar extends Component {
                             <a href='/usersignup' class="dropdown-item">User Sign Up</a>
                             <a href="/banksignup" class="dropdown-item">Food Bank Sign Up</a>
                         </div>
-                    </li>
+                    </li>    
                 </ul>
-                </div>
             </nav>
         )
     }
