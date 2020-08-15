@@ -8,7 +8,7 @@ export default class navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-                <a href="/" class = "navbar-brand mb-0 h4">FoodForAll</a>
+                <a href="/" class = "h4">FoodForAll</a>
                 <ul className="nav navbar-nav navbar-right">
                     <li className="navbar-item">
                         <Link to="/Donate" className="nav-link">Donate</Link>
