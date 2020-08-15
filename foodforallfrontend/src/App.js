@@ -19,10 +19,10 @@ function App() {
       <Route path='/' exact component={home} />
       <Route path='/donate' exact component={donate} />
       <Route path='/finder' exact component={finder} />
-      <Route path='/login' exact component={login} />
-      <Route path='/signup' exact component={signup} />
-      <Route path='/loginbank' exact component={loginbank} />
-      <Route path='/signupbank' exact component={signupbank} />
+      <Route path='/userlogin' exact component={login} />
+      <Route path='/usersignup' exact component={signup} />
+      <Route path='/banklogin' exact component={loginbank} />
+      <Route path='/banksignup' exact component={signupbank} />
       
     </Router>
   );
