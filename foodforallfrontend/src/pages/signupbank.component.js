@@ -59,7 +59,7 @@ export class signupbank extends Component {
   }
 
   enterState(optionSelected) {
-    label = optionSelected.label;
+    const label = optionSelected.label;
     this.setState({
       stateLocation: label,
     });
