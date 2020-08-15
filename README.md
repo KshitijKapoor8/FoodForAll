@@ -1,3 +1,1 @@
-H O W
-
-H   O   W
+npm install express mongoose cors react 
