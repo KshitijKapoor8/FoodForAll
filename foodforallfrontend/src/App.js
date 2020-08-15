@@ -17,8 +17,15 @@ function App() {
       <Route path='/' exact component={home} />
       <Route path='/donate' exact component={donate} />
       <Route path='/finder' exact component={finder} />
+<<<<<<< HEAD
+      <Route path='/userlogin' exact component={login} />
+      <Route path='/usersignup' exact component={signup} />
+      <Route path='/banklogin' exact component={loginbank} />
+      <Route path='/banksignup' exact component={signupbank} />
+=======
       <Route path='/loginuser' exact component={loginuser} />
       <Route path='/signup' exact component={signup} />
+>>>>>>> 34713d5de6aa4d61f58504187b40bd5d43b9b1c7
       
     </Router>
   );

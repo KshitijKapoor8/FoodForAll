@@ -61,7 +61,6 @@ export class signup extends Component {
     const label = optionSelected.label;
     this.setState({
       stateLocation: label,
-      
     });
 
   }
