@@ -4,61 +4,59 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 
-
-
 const animatedComponents = makeAnimated();
 
 const States = [
-  {label: "Alabama"},
-  {label: "Alaska"},
-  {label: "Arizona"},
-  {label: "Arkansas"},
-  {label: "California"},
-  {label: "Colorado"},
-  {label: "Connecticut"},
-  {label: "Delaware"},
-  {label: "Florida"},
-  {label: "Georgia"},
-  {label: "Hawaii"},
-  {label: "Idaho"},
-  {label: "Illinois"},
-  {label: "Indiana"},
-  {label: "Iowa"},
-  {label: "Kansas"},
-  {label: "Kentucky"},
-  {label: "Louisiana"},
-  {label: "Maine"},
-  {label: "Maryland"},
-  {label: "Massachusetts"},
-  {label: "Michigan"},
-  {label: "Minnesota"},
-  {label: "Mississippi"},
-  {label: "Missouri"},
-  {label: "Montana"},
-  {label: "Nebraska"},
-  {label: "Nevada"},
-  {label: "New Hampshire"},
-  {label: "New Jersey"},
-  {label: "New Mexico"},
-  {label: "New York"},
-  {label: "North Carolina"},
-  {label: "North Dakota"},
-  {label: "Ohio"},
-  {label: "Oklahoma"},
-  {label: "Oregon"},
-  {label: "Pennsylvania"},
-  {label: "Rhode Island"},
-  {label: "South Carolina"},
-  {label: "South Dakota"},
-  {label: "Tennessee"},
-  {label: "Texas"},
-  {label: "Utah"},
-  {label: "Vermont"},
-  {label: "Virginia"},
-  {label: "Washington"},
-  {label: "West Virginia"},
-  {label: "Wisconsin"},
-  {label: "Wyoming"},
+  { label: "Alabama" },
+  { label: "Alaska" },
+  { label: "Arizona" },
+  { label: "Arkansas" },
+  { label: "California" },
+  { label: "Colorado" },
+  { label: "Connecticut" },
+  { label: "Delaware" },
+  { label: "Florida" },
+  { label: "Georgia" },
+  { label: "Hawaii" },
+  { label: "Idaho" },
+  { label: "Illinois" },
+  { label: "Indiana" },
+  { label: "Iowa" },
+  { label: "Kansas" },
+  { label: "Kentucky" },
+  { label: "Louisiana" },
+  { label: "Maine" },
+  { label: "Maryland" },
+  { label: "Massachusetts" },
+  { label: "Michigan" },
+  { label: "Minnesota" },
+  { label: "Mississippi" },
+  { label: "Missouri" },
+  { label: "Montana" },
+  { label: "Nebraska" },
+  { label: "Nevada" },
+  { label: "New Hampshire" },
+  { label: "New Jersey" },
+  { label: "New Mexico" },
+  { label: "New York" },
+  { label: "North Carolina" },
+  { label: "North Dakota" },
+  { label: "Ohio" },
+  { label: "Oklahoma" },
+  { label: "Oregon" },
+  { label: "Pennsylvania" },
+  { label: "Rhode Island" },
+  { label: "South Carolina" },
+  { label: "South Dakota" },
+  { label: "Tennessee" },
+  { label: "Texas" },
+  { label: "Utah" },
+  { label: "Vermont" },
+  { label: "Virginia" },
+  { label: "Washington" },
+  { label: "West Virginia" },
+  { label: "Wisconsin" },
+  { label: "Wyoming" },
 ];
 
 export class signup extends Component {
@@ -105,7 +103,6 @@ export class signup extends Component {
     this.setState({
       stateLocation: label,
     });
-
   }
 
   enterEmail(e) {
@@ -134,7 +131,7 @@ export class signup extends Component {
     });
 
     console.log(user);
-    window.location = '/'
+    window.location = "/";
 
     //axios.post('http://localhost:5000/users/add', user)
     // .then(res => console.log(res.data))
@@ -146,8 +143,8 @@ export class signup extends Component {
   render() {
     return (
       <div>
-        <h3 class="col-lg-6 offset-lg-3 ">Sign Up</h3>
-        <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3" >
+        <h3 class="text-center">Sign Up</h3>
+        <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3">
           <div className="form-group">
             <label>Username: </label>
             <input
@@ -181,8 +178,7 @@ export class signup extends Component {
               value={this.state.email}
               onChange={this.enterEmail}
             />
-          </div>
-          <div>
+            <label>Enter State: </label>
             <Select
               options={States}
               components={animatedComponents}
@@ -190,7 +186,7 @@ export class signup extends Component {
               multiple={false}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group" class="text-center">
             <input
               type="submit"
               value="Create User"

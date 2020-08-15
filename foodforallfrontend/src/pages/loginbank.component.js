@@ -57,7 +57,7 @@ export class loginbank extends Component {
   render() {
     return (
       <div>
-        <h3 class="col-lg-6 offset-lg-3 ">Login</h3>
+        <h3 class="text-center">Login</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
             <label>Username: </label>
@@ -85,10 +85,10 @@ export class loginbank extends Component {
               onChange={this.enterEmail}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group" class="text-center">
             <input
               type="submit"
-              value="Create User"
+              value="Login"
               className="btn btn-primary"
             />
           </div>

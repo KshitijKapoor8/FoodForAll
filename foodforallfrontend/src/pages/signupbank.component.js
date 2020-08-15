@@ -4,17 +4,59 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 
-
 const animatedComponents = makeAnimated();
 
-const Countries = [
-  { label: "Albania"},
-  { label: "Argentina"},
-  { label: "Austria"},
-  { label: "Cocos Islands"},
-  { label: "Kuwait"},
-  { label: "Sweden"},
-  { label: "Venezuela" },
+const States = [
+  { label: "Alabama" },
+  { label: "Alaska" },
+  { label: "Arizona" },
+  { label: "Arkansas" },
+  { label: "California" },
+  { label: "Colorado" },
+  { label: "Connecticut" },
+  { label: "Delaware" },
+  { label: "Florida" },
+  { label: "Georgia" },
+  { label: "Hawaii" },
+  { label: "Idaho" },
+  { label: "Illinois" },
+  { label: "Indiana" },
+  { label: "Iowa" },
+  { label: "Kansas" },
+  { label: "Kentucky" },
+  { label: "Louisiana" },
+  { label: "Maine" },
+  { label: "Maryland" },
+  { label: "Massachusetts" },
+  { label: "Michigan" },
+  { label: "Minnesota" },
+  { label: "Mississippi" },
+  { label: "Missouri" },
+  { label: "Montana" },
+  { label: "Nebraska" },
+  { label: "Nevada" },
+  { label: "New Hampshire" },
+  { label: "New Jersey" },
+  { label: "New Mexico" },
+  { label: "New York" },
+  { label: "North Carolina" },
+  { label: "North Dakota" },
+  { label: "Ohio" },
+  { label: "Oklahoma" },
+  { label: "Oregon" },
+  { label: "Pennsylvania" },
+  { label: "Rhode Island" },
+  { label: "South Carolina" },
+  { label: "South Dakota" },
+  { label: "Tennessee" },
+  { label: "Texas" },
+  { label: "Utah" },
+  { label: "Vermont" },
+  { label: "Virginia" },
+  { label: "Washington" },
+  { label: "West Virginia" },
+  { label: "Wisconsin" },
+  { label: "Wyoming" },
 ];
 
 export class signupbank extends Component {
@@ -65,7 +107,7 @@ export class signupbank extends Component {
 
   enteraddress(e) {
     this.setState({
-        address: e.target.value,
+      address: e.target.value,
     });
   }
 
@@ -88,8 +130,7 @@ export class signupbank extends Component {
       stateLocation: "",
     });
 
-    window.location = '/'
-
+    window.location = "/";
 
     //axios.post('http://localhost:5000/users/add', user)
     // .then(res => console.log(res.data))
@@ -101,7 +142,7 @@ export class signupbank extends Component {
   render() {
     return (
       <div>
-        <h3 class="col-lg-6 offset-lg-3 ">Sign Up-Food Bank</h3>
+        <h3 class="text-center">Sign Up-Food Bank</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
             <label>Username: </label>
@@ -136,16 +177,15 @@ export class signupbank extends Component {
               value={this.state.address}
               onChange={this.enteraddress}
             />
-          </div>
-          <div>
+            <label>Enter State: </label>
             <Select
-              options={Countries}
+              options={States}
               components={animatedComponents}
               onChange={this.enterState}
               multiple={false}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group" class="text-center">
             <input
               type="submit"
               value="Create User"
