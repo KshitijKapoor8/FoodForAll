@@ -6,6 +6,7 @@ import Navbar from './components/navbar.component.js';
 import home from './pages/home.component.js';
 import finder from './pages/finder.component.js';
 import loginuser from './pages/loginuser.component.js';
+import loginbank from './pages/loginbank.component.js';
 import signup from './pages/signupuser.component.js';
 import donate from './pages/donate.component.js';
 
@@ -18,6 +19,7 @@ function App() {
       <Route path='/donate' exact component={donate} />
       <Route path='/finder' exact component={finder} />
       <Route path='/loginuser' exact component={loginuser} />
+      <Route path='/loginbank' exact component={loginbank} />
       <Route path='/signup' exact component={signup} />
       
     </Router>
