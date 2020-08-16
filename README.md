@@ -1,4 +1,5 @@
 npm install express mongoose cors react nodemon jquery popper.js axios
+<<<<<<< HEAD
 
 google-map-react
 
@@ -8,3 +9,8 @@ npm install typescript
 npm install react-bootstrap bootstrap
 npm i react-scroll-parallax
 
+=======
+npm install react-bootstrap bootstrap
+npm i react-scroll-parallax
+npm install react-parallax
+>>>>>>> 1af171b88df7d365a0c4fd4281f9537f880b2faf
