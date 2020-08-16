@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 export class loginbank extends Component {
   constructor(props) {
@@ -47,13 +48,10 @@ export class loginbank extends Component {
       password: ""
     });
 
-<<<<<<< HEAD
-=======
     axios
       .post('http://localhost:5000/banks/login', user)
       .then((res) => console.log(res.data))
       .catch((err) => alert("404 Not Found"));
->>>>>>> f644c0fa960b026d485683a10329a813fa906217
 
 
   }

@@ -44,17 +44,9 @@ export class loginuser extends Component {
 
     axios
       .post('http://localhost:5000/users/login', user)
-<<<<<<< HEAD
-      .then((res) => {
-        console.log(res.data);
-        this.context.username = user.username;
-      })
-      .catch((err) => console.log('Error: ' + err));
-=======
       .then((res) => console.log(res.data))
       .catch((err) => alert("404 Not Found")({
       }));
->>>>>>> f644c0fa960b026d485683a10329a813fa906217
 
       
   }

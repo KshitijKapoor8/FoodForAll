@@ -1,6 +1,8 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import image from '../hiker.svg'
+import {Card, Button} from 'react-bootstrap'
+import "../App.css";
 
 
 
@@ -40,11 +42,49 @@ function home() {
                   
         )}
       >
-        <div style={{ height: 1500 }}>
+        <div style={{ height: 900 }}>
 
         </div>
       </Parallax>
       <div style={{ height: '100vh' }}></div>
+      <div className="cardGroup">
+        <Card className='card1'>
+          <Card.Img variant="top" src=''/>
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+
+        <Card className='card2'>
+          <Card.Img variant="top" src=''/>
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+
+        <Card className='card3'>
+          <Card.Img variant="top" src=''/>
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+      </div>
+      
 
 
     </div>
