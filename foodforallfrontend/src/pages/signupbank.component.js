@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import axios from 'axios';
 
 const animatedComponents = makeAnimated();
 
@@ -69,11 +70,13 @@ export class signupbank extends Component {
     this.confirmPassword = this.confirmPassword.bind(this);
     this.enterState = this.enterState.bind(this);
     this.enteraddress = this.enteraddress.bind(this);
+    this.enterEmail = this.enterEmail.bind(this);
 
     this.state = {
       username: "",
       password: "",
       confirmPassword: "",
+      email: "",
       address: "",
       stateLocation: "Choose State",
       error: false,
@@ -111,13 +114,19 @@ export class signupbank extends Component {
     });
   }
 
+  enterEmail(e) {
+    this.setState({
+      email: e.target.value,
+    });
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
     const user = {
-      username: this.state.username,
+      bankName: this.state.username,
+      email: this.state.email,
       password: this.state.password,
-      confirmPassword: this.state.confirmPassword,
       address: this.state.address,
       stateLocation: this.state.stateLocation,
     };
@@ -126,17 +135,18 @@ export class signupbank extends Component {
       username: "",
       password: "",
       confirmPassword: "",
+      email: "",
       address: "",
       stateLocation: "",
     });
 
+    axios.post('http://localhost:5000/banks/add', user)
+    .then(res => console.log(res.data))
+    .catch(err => console.log("Error: " + err));
+
     window.location = "/";
 
-    //axios.post('http://localhost:5000/users/add', user)
-    // .then(res => console.log(res.data))
-    // .catch(err =>this.setState({
-    //    error: true
-    // }))
+    
   }
 
   render() {
@@ -176,6 +186,14 @@ export class signupbank extends Component {
               className="form-control"
               value={this.state.address}
               onChange={this.enteraddress}
+            />
+            <label>Enter Email: </label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              value={this.state.email}
+              onChange={this.enterEmail}
             />
             <label>Enter State: </label>
             <Select
