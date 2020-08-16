@@ -8,6 +8,8 @@ import {
 } from 'react-bootstrap';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../App.css";
+
 
 export class donate extends Component {
   constructor(props) {
@@ -18,11 +20,7 @@ export class donate extends Component {
 
     this.state = { 
         posts: [],
-<<<<<<< HEAD
         bank: []
-=======
-        banks: []
->>>>>>> d5ada6f677210146abb4f0fe7ca40ab754f9f6bb
      };
 
     axios
@@ -38,8 +36,6 @@ export class donate extends Component {
       });
 
 
-      const x = this.state.post.bank;
-      console.log(x);
     this.state.posts.forEach((post) => {
         const x = post.bank;
         console.log("hello");
@@ -79,7 +75,7 @@ export class donate extends Component {
         <Card style={{ width: '18rem' }}>
           <Card.Body>
             <Card.Title>{card.item}</Card.Title>
-            <Card.Text> {this.state.banks[index]} </Card.Text>
+            <Card.Text> {card.bank} </Card.Text>
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>

@@ -7,11 +7,12 @@ import "../App.css";
 const pBottomStyle = {
   background: "#000",
   height: "1000px",
+  margin: "0"
 };
 
 function home() {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center" }} >
       <Parallax
         bgImage={image}
         strength={200}
@@ -26,6 +27,7 @@ function home() {
               left: "50%",
               top: "50%",
               transform: `translate(-50%, -50%) scale(${precentage * 5})`,
+              margin: "0"
             }}
           >
             <div
@@ -34,6 +36,7 @@ function home() {
                 left: "50%",
                 top: "50%",
                 transform: `translate(-50%, -50%) scale(${precentage * 5})`,
+                margin: "0"
               }}
             >
               FoodForAll
@@ -41,9 +44,9 @@ function home() {
           </div>
         )}
       >
-        <div style={{ height: 700 }}></div>
+        <div style={{ height: 700,margin: "0" }}></div>
       </Parallax>
-      <div style={{ height: "3vh" }}></div>
+      <div style={{ height: "3vh",margin: "0" }}></div>
         <CardDeck>
           <Card className="mx-auto; " border="success" style={{ width: '18rem' }}>
             <Card.Img variant="top" />
@@ -61,8 +64,8 @@ function home() {
             <Card.Body>
               <Card.Title>Our Mission</Card.Title>
               <Card.Text>
-                This card has supporting text below as a natural lead-in to
-                additional content.{" "}
+              We wish to see a community in which people are able to get sufficent food and resources.
+              We believe that access to healthy nutritious food is a basic human right. {" "}
               </Card.Text>
             </Card.Body>
           </Card>

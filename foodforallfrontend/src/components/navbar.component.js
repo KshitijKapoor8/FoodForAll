@@ -10,7 +10,8 @@ import loginbank from '../pages/loginbank.component.js'
 export default class navbar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-light bg-light navbar-expand-lg">
+            <div class="p-3 mb-2 bg-success text-white">
+            <nav className="navbar navbar-light bg-green navbar-expand-lg" >
                 
                 <ul className="nav navbar-nav">
                     <li className="navbar-item">
@@ -58,6 +59,7 @@ export default class navbar extends Component {
                     </li>  
                 </ul>
             </nav>
+            </div>
         )
     }
 }

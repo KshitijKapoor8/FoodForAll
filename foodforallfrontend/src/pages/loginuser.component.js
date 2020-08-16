@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import "../App.css";
 import image from "../hiker.svg";
-import Image from 'react-bootstrap/Image'
-
-
+import Image from "react-bootstrap/Image";
 
 export class loginuser extends Component {
   constructor(props) {
@@ -16,9 +14,9 @@ export class loginuser extends Component {
     this.enterPassword = this.enterPassword.bind(this);
 
     this.state = {
-      email: '',
-      password: '',
-      error: false,
+      email: "",
+      password: "",
+      error: "",
     };
   }
 
@@ -43,23 +41,23 @@ export class loginuser extends Component {
     };
 
     this.setState({
-      email: '',
-      password: ''
+      email: "",
+      password: "",
     });
 
     axios
-      .post('http://localhost:5000/users/login', user)
+      .post("http://localhost:5000/users/login", user)
       .then((res) => console.log(res.data))
-      .catch((err) => alert("404 Not Found")({
+      .catch((err) => this.setState({
+        error: "Your username or passward was incorrect"
       }));
 
-      
   }
 
   render() {
     return (
       <div>
-        <Image src={image} fluid/>
+        <Image src={image} fluid />
         <h3 class="text-center">User Login</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
@@ -80,6 +78,9 @@ export class loginuser extends Component {
               onChange={this.enterPassword}
             />
           </div>
+          <small style = {{color: "red"}}>
+            {this.state.error}
+          </small>
           <div className="form-group" class="text-center">
             <input type="submit" value="Login" className="btn btn-primary" />
           </div>

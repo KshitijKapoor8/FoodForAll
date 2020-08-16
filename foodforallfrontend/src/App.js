@@ -22,8 +22,7 @@ const mapStyles = {
 function App() {
   return (
     <Router>
-      <Navbar />
-      <br/>
+      <Navbar/>
       <Route path='/' exact component={home} />
       <Route path='/donate' exact component={donate} />
       <Route path='/finder' exact component={finder} />

@@ -21,7 +21,7 @@ export class loginbank extends Component {
     this.state = {
       email: "",
       password: "",
-      error: false
+      error: "",
     };
   }
 
@@ -55,7 +55,9 @@ export class loginbank extends Component {
     axios
       .post('http://localhost:5000/banks/login', user)
       .then((res) => console.log(res.data))
-      .catch((err) => alert("404 Not Found"));
+      .catch((err) => this.setState({
+        error: "Your username or passward was incorrect"
+      }) );
 
 
   }
@@ -84,6 +86,9 @@ export class loginbank extends Component {
               onChange={this.enterPassword}
             />
           </div>
+          <small style = {{color: "red"}}>
+            {this.state.error}
+          </small>
           <div className="form-group" class="text-center">
             <input
               type="submit"
