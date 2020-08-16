@@ -52,7 +52,7 @@ function home() {
             <Card.Body>
               <Card.Title>Features!</Card.Title>
               <Card.Text>
-                
+                Locate your nearest food bank with our easy to use map!
               </Card.Text>
             </Card.Body>
           </Card>

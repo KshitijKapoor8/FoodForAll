@@ -11,6 +11,7 @@ import loginbank from "./pages/loginbank.component.js";
 import signupbank from "./pages/signupbank.component.js";
 import signup from "./pages/signupuser.component.js";
 import donate from "./pages/donate.component.js";
+import postcreate from "./pages/postcreation.component.js"
 
 const mapStyles = {
   width: "100%",
@@ -38,6 +39,7 @@ function App() {
       <Route path="/usersignup" exact component={signup} />
       <Route path="/banklogin" exact component={loginbank} />
       <Route path="/banksignup" exact component={signupbank} />
+      <Route path="/postcreation" exact component={postcreate} />
     </Router>
   );
 }
