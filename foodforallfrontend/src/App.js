@@ -23,19 +23,11 @@ const mapStyles = {
 
 
 
-function switchNav(){
-        console.log('hello');
-        if(window.$loggedin)
-        {
-          return <Loggedinnavbar/>;
-        }
 
-        return <Navbar/>;
-      }
 function App() {
   return (
     <Router>
-      {switchNav()}
+      <Navbar/>
       <Route path='/' exact component={home} />
       <Route path='/donate' exact component={donate} />
       <Route path='/finder' exact component={finder} />
