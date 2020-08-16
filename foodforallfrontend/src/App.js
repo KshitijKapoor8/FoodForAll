@@ -5,6 +5,7 @@ import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 
 import Navbar from './components/navbar.component.js';
+import Loggedinnavbar from './components/loggedinnavbar.component.js';
 import home from './pages/home.component.js';
 import finder from './pages/map.component.tsx';
 import login from './pages/loginuser.component.js';
@@ -17,6 +18,10 @@ const mapStyles = {
   width: '100%',
   height: '100%'
 };
+
+
+
+
 
 
 function App() {
