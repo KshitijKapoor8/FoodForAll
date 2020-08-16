@@ -42,9 +42,9 @@ export class donate extends Component {
           border='success'
           text='dark'
           style={{
-            width: "100rem",
+            width: "99%",
             height: "17rem",
-            align: "center",
+            align: "right",
           }}
         >
           <Card.Body>
