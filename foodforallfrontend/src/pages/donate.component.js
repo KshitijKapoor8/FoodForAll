@@ -18,6 +18,7 @@ export class donate extends Component {
 
     this.state = { 
         posts: [],
+        banks: []
      };
 
     axios
@@ -72,7 +73,7 @@ export class donate extends Component {
         <Card style={{ width: '18rem' }}>
           <Card.Body>
             <Card.Title>{card.item}</Card.Title>
-            <Card.Text> {card.bank} </Card.Text>
+            <Card.Text> {this.state.banks[index]} </Card.Text>
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>
