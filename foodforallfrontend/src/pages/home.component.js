@@ -1,8 +1,13 @@
 import React from "react";
 import { Parallax } from "react-parallax";
-import image from "../hiker.svg";
+import image from "../hunger.jpg";
+import image1 from "../image1.jpg";
+import image2 from "../image2.jpg";
+import image3 from "../image3.jpg"
+
 import { Card, CardDeck } from "react-bootstrap";
 import "../App.css";
+import Image from 'react-bootstrap/Image'
 
 const pBottomStyle = { 
   background: "#000",
@@ -17,66 +22,66 @@ function home() {
         bgImage={image}
         strength={200}
         renderLayer={(precentage) => (
-          <div
-            style={{
-              position: "absolute",
-              width: "100px",
-              height: "100px",
-              borderRadius: "50%",
-              background: `rgba(255, 123, 23, ${precentage * 1})`,
-              left: "50%",
-              top: "50%",
-              transform: `translate(-50%, -50%) scale(${precentage * 5})`,
-              margin: "0"
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                left: "50%",
-                top: "50%",
-                transform: `translate(-50%, -50%) scale(${precentage * 5})`,
-                margin: "0"
-              }}
-            >
-              FoodForAll
-            </div>
+          <div>
+              <div class="transbox">
+                <h1>Hunger: The Ultimate Problem</h1>
+                <h4>In these trying times, food banks are becoming a necessity to the American people.</h4>
+              </div>
           </div>
         )}
       >
-        <div style={{ height: 700,margin: "0" }}></div>
+        <div style={{ height: 825,margin: "0" }}></div>
       </Parallax>
-      <div style={{ height: "3vh",margin: "0" }}></div>
-        <CardDeck>
-          <Card border="success" style={{ width: "9rem" , height: "36rem"}}>
-            <Card.Body>
-              <Card.Title>Features!</Card.Title>
-              <Card.Text>
-                Locate your nearest food bank with our easy to use map!
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card border="success" style={{ width: "9rem" }}>
-            
-            <Card.Body>
-              <Card.Title>Our Mission</Card.Title>
-              <Card.Text>
-              We wish to see a community in which people are able to get sufficent food and resources.
-              We believe that access to healthy nutritious food is a basic human right. 
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card border="success" style={{ width: "9rem" }}>
-            <Card.Body>
-              <Card.Title>Coming Soon!</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </CardDeck>
+      
+        <Parallax
+        bgImage={image1}
+        strength={200}
+        renderLayer={(precentage) => (
+          <div>
+              <div style = {{width:'25rem', height:'25rem', border:"2px solid black", backgroundColor:"white", opacity:".8", float:"left"}}>
+                <h1 style={{fontFamily:"Segoe UI", fontWeight:"bold", textAlign:"left", marginLeft: '1rem'}}>Our Mission</h1>
+                <h4 style={{textAlign:"left", marginLeft: '1rem'}}>We wish to see a community in which people are able to get sufficent food and resources.
+                    We believe that access to healthy nutritious food is a basic human right. Our Mission is to provide a platform in which food banks can express their needs and benefactors can donate. </h4>
+              </div>
+          </div>
+        )}
+      >
+        <div style={{ height: 410,margin: "0" }}></div>
+      </Parallax>
+        
+
+        <Parallax
+        bgImage={image2}
+        strength={200}
+        renderLayer={(precentage) => (
+          <div>
+              <div style = {{width:'25rem', height:'25rem', border:"2px solid black", backgroundColor:"white", opacity:".8", float:"right"}}>
+                <h1 style={{fontFamily:"Segoe UI", fontWeight:"bold", textAlign:"right", marginRight: '1rem'}}>Features</h1>
+                <h4 style={{textAlign:"right", marginRight: '1rem'}}>With our site, food banks will be able to request items they need, with users having the ability to pool their resources to help those in need. With millions of Americans in poverty
+                , our site will allow for those in need to recieve basic necesities that they otherwise would not have recieved. </h4>
+              </div>
+          </div>
+        )}
+      >
+        <div style={{ height: 410,margin: "0" }}></div>
+      </Parallax>
+        
+
+        <Parallax
+        bgImage={image3}
+        strength={200}
+        renderLayer={(precentage) => (
+          <div>
+              <div style = {{width:'25rem', height:'25rem', border:"2px solid black", backgroundColor:"white", opacity:".8", float:"left"}}>
+                <h1 style={{fontFamily:"Segoe UI", fontWeight:"bold", textAlign:"left", marginLeft: '1rem'}}>Bank Database</h1>
+                <h4 style={{textAlign:"left", marginLeft: '1rem'}}>Our site is simple and easy to use, tailored towards food banks who want a more widespread way to share their need, making our site a center for food banks and their donors. </h4>
+              </div>
+          </div>
+        )}
+      >
+        <div style={{ height: 410,margin: "0" }}></div>
+      </Parallax>
+        
       </div>
   );
 }
