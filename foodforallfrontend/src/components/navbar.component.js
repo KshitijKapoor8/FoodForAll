@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
+import "../App.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
+import login from '../pages/loginuser.component.js';
+import loginbank from '../pages/loginbank.component.js'
 
 export default class navbar extends Component {
     render() {
@@ -26,6 +30,8 @@ export default class navbar extends Component {
                         <Link to="/Finder" className="nav-link h4">Finder</Link>
                     </li>
                 </ul>
+
+                
                 <ul className="nav navbar-nav ml-auto">
                     <li className="nav-item dropdown">
                         <a class="nav-link dropdown-toggle h4" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-user"></span> Login</a>

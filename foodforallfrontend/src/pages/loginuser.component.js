@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-
 
 export class loginuser extends Component {
   constructor(props) {
@@ -12,9 +11,9 @@ export class loginuser extends Component {
     this.enterPassword = this.enterPassword.bind(this);
 
     this.state = {
-      username: "",
-      password: "",
-      error: false
+      username: '',
+      password: '',
+      error: false,
     };
   }
 
@@ -33,19 +32,19 @@ export class loginuser extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-
     const user = {
-      username: this.state.username,
+      email: this.state.username,
       password: this.state.password,
     };
 
-
     this.setState({
-      username: "",
+      username: '',
     });
 
-
-    window.location = '/'
+    axios
+      .post('http://localhost:5000/users/login', user)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log('Error: ' + err));
 
   }
 
@@ -73,11 +72,7 @@ export class loginuser extends Component {
             />
           </div>
           <div className="form-group" class="text-center">
-            <input
-              type="submit"
-              value="Login"
-              className="btn btn-primary"
-            />
+            <input type="submit" value="Login" className="btn btn-primary" />
           </div>
         </form>
       </div>

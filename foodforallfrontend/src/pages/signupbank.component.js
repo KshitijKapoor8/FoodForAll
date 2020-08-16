@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import axios from 'axios';
 
 const animatedComponents = makeAnimated();
 
@@ -123,10 +124,9 @@ export class signupbank extends Component {
     e.preventDefault();
 
     const user = {
-      username: this.state.username,
-      password: this.state.password,
-      confirmPassword: this.state.confirmPassword,
+      bankName: this.state.username,
       email: this.state.email,
+      password: this.state.password,
       address: this.state.address,
       stateLocation: this.state.stateLocation,
     };
@@ -140,13 +140,13 @@ export class signupbank extends Component {
       stateLocation: "",
     });
 
+    axios.post('http://localhost:5000/banks/add', user)
+    .then(res => console.log(res.data))
+    .catch(err => console.log("Error: " + err));
+
     window.location = "/";
 
-    //axios.post('http://localhost:5000/users/add', user)
-    // .then(res => console.log(res.data))
-    // .catch(err =>this.setState({
-    //    error: true
-    // }))
+    
   }
 
   render() {
