@@ -7,7 +7,6 @@ import axios from "axios";
 import "../App.css";
 import image from "../hiker.svg";
 import Image from "react-bootstrap/Image";
-import "../App.css";
 
 
 const animatedComponents = makeAnimated();

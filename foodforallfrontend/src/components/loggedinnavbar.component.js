@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import "../App.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { Button, Card, ProgressBar } from "react-bootstrap";
+
+
 import login from '../pages/loginuser.component.js';
 import loginbank from '../pages/loginbank.component.js'
 
@@ -46,7 +49,11 @@ export default class navbar extends Component {
 
                 <ul className = "nav navbar-nav ml-auto">
                     <li className="navbar-item">
+<<<<<<< HEAD
                         <button  onClick = {() => {window.$loggedin=false; window.$userToken = ''; window.$bankToken = ''; localStorage.setItem("checkiflogged", window.$loggedin); console.log(window.$loggedin); window.location='/' }} className="nav-link h4">Logout</button>
+=======
+                        <Button variant="danger" onClick = {() => {window.$loggedin=false; localStorage.setItem("checkiflogged", window.$loggedin); window.$switchNav(); window.location = '/';}} className="nav-link h4">Logout</Button>
+>>>>>>> c56ce3e5ca8c0ae72168c5d2bd478d15e4d72ac3
                     </li>
                 </ul>
             </nav>
