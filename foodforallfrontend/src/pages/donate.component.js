@@ -11,12 +11,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
 export class donate extends Component {
+  
+  
+  
+  
+  
+  
   constructor(props) {
     super(props);
 
     // this.donate = this.donate.bind(this);
     // this.addName = this.addName.bind(this);
-
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       posts: [],
       bankName: '',
@@ -25,6 +31,7 @@ export class donate extends Component {
       item: '',
       itemCount: '',
       itemNeeded: '',
+      value: '',
     };
 
     //var x = localStorage.getItem('bankToken', window.$bankToken);
@@ -46,6 +53,16 @@ export class donate extends Component {
   donate(id) {
 
   }
+
+
+handleChange(e) {
+  this.setState({ value: e.target.value });
+
+ }
+
+
+
+
   // to call this.myInput.value
   render() {
     const renderCard = (card, index) => {
@@ -68,7 +85,7 @@ export class donate extends Component {
 
             <ProgressBar now={(card.itemCount / card.itemNeeded) * 100} />
             <InputGroup className="mt-4" style={{ width: '20%' }}>
-              <FormControl aria-describedby="basic-addon2" inputRef={ref => { this.myInput = ref; }} />       
+              <FormControl aria-describedby="basic-addon2" onChange={this.handleChange} value={this.state.value}/>       
               <InputGroup.Append> 
                 <button
                   style={{
@@ -96,6 +113,7 @@ export class donate extends Component {
                 >
                   Donate!
                 </button>
+  
               </InputGroup.Append>
             </InputGroup>
           </Card.Body>
