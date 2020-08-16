@@ -6,6 +6,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import login from '../pages/loginuser.component.js';
 import loginbank from '../pages/loginbank.component.js'
 
+
 export default class navbar extends Component {
     render() {
         return (
@@ -15,7 +16,7 @@ export default class navbar extends Component {
                     <li className="navbar-item">
                         <Link to="/" class = "nav-link h2">FoodForAll</Link>
                     </li>
-
+                    
                     <li className="navbar-item">
                         <a class = "nav-link h2"></a>
                     </li>

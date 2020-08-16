@@ -4,6 +4,10 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Select, { components } from 'react-select';
 import makeAnimated from "react-select/animated";
 import axios from 'axios';
+import "../App.css";
+import image from "../hiker.svg";
+import Image from 'react-bootstrap/Image'
+
 
 
 const animatedComponents = makeAnimated();
@@ -153,6 +157,7 @@ export class signupbank extends Component {
   render() {
     return (
       <div>
+        <Image src={image} fluid/>
         <h3 class="text-center">Sign Up-Food Bank</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">

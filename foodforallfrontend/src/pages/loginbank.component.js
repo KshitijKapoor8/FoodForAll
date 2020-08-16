@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import "../App.css";
+import image from "../hiker.svg";
+import Image from 'react-bootstrap/Image'
+
 
 export class loginbank extends Component {
   constructor(props) {
@@ -59,6 +63,7 @@ export class loginbank extends Component {
   render() {
     return (
       <div>
+        <Image src={image} fluid/>
         <h3 class="text-center">Food Bank Login</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
