@@ -65,7 +65,7 @@ export class loginbank extends Component {
   render() {
     return (
       <div>
-        <Image src={image} fluid/>
+        <Image src={image}  fluid/>
         <h3 class="text-center">Food Bank Login</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">

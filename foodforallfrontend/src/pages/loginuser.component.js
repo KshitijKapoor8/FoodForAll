@@ -4,14 +4,13 @@ import axios from "axios";
 import "../App.css";
 import image from "../hiker.svg";
 import Image from "react-bootstrap/Image";
-import App from '../App.js'
-import Loggedinnavbar from '../components/loggedinnavbar.component.js';
+import App from "../App.js";
+import Loggedinnavbar from "../components/loggedinnavbar.component.js";
 
-window.$userToken = '';
+window.$userToken = "";
 window.$loggedin = false;
 
 export class loginuser extends Component {
-   
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -49,13 +48,19 @@ export class loginuser extends Component {
       email: "",
       password: "",
     });
-
+    window.$loggedin = true;
+    console.log(localStorage.setItem("checkiflogged", window.$loggedin));
     axios
       .post('http://localhost:5000/users/login', user)
-      .then((res) => { localStorage.setItem("checkiflogged", window.$loggedin); window.location = '/'; window.$loggedin=true; window.$userToken=res.data; console.log(window.$userToken);  console.log(window.$loggedin); window.$switchNav();})
+      .then((res) => {window.$loggedin=true; localStorage.setItem("checkiflogged", window.$loggedin); window.$userToken=res.data; console.log(window.$userToken);  console.log(window.$loggedin); window.location = '/';})
       .catch((err) => this.setState({
         error: "Your username or passward was incorrect "+err 
-      }));   
+      }));
+
+      
+      
+
+      
   }
 
   render() {
@@ -82,9 +87,7 @@ export class loginuser extends Component {
               onChange={this.enterPassword}
             />
           </div>
-          <small style = {{color: "red"}}>
-            {this.state.error}
-          </small>
+          <small style={{ color: "red" }}>{this.state.error}</small>
           <div className="form-group" class="text-center">
             <input type="submit" value="Login" className="btn btn-primary" />
           </div>
