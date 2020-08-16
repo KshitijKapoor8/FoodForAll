@@ -1,63 +1,66 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Select from 'react-select';
-import makeAnimated from 'react-select/animated';
-import axios from 'axios';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Select from "react-select";
+import makeAnimated from "react-select/animated";
+import axios from "axios";
+import "../App.css";
+import image from "../hiker.svg";
+import Image from "react-bootstrap/Image";
 
 const animatedComponents = makeAnimated();
 
 const States = [
-  { label: 'Alabama' },
-  { label: 'Alaska' },
-  { label: 'Arizona' },
-  { label: 'Arkansas' },
-  { label: 'California' },
-  { label: 'Colorado' },
-  { label: 'Connecticut' },
-  { label: 'Delaware' },
-  { label: 'Florida' },
-  { label: 'Georgia' },
-  { label: 'Hawaii' },
-  { label: 'Idaho' },
-  { label: 'Illinois' },
-  { label: 'Indiana' },
-  { label: 'Iowa' },
-  { label: 'Kansas' },
-  { label: 'Kentucky' },
-  { label: 'Louisiana' },
-  { label: 'Maine' },
-  { label: 'Maryland' },
-  { label: 'Massachusetts' },
-  { label: 'Michigan' },
-  { label: 'Minnesota' },
-  { label: 'Mississippi' },
-  { label: 'Missouri' },
-  { label: 'Montana' },
-  { label: 'Nebraska' },
-  { label: 'Nevada' },
-  { label: 'New Hampshire' },
-  { label: 'New Jersey' },
-  { label: 'New Mexico' },
-  { label: 'New York' },
-  { label: 'North Carolina' },
-  { label: 'North Dakota' },
-  { label: 'Ohio' },
-  { label: 'Oklahoma' },
-  { label: 'Oregon' },
-  { label: 'Pennsylvania' },
-  { label: 'Rhode Island' },
-  { label: 'South Carolina' },
-  { label: 'South Dakota' },
-  { label: 'Tennessee' },
-  { label: 'Texas' },
-  { label: 'Utah' },
-  { label: 'Vermont' },
-  { label: 'Virginia' },
-  { label: 'Washington' },
-  { label: 'West Virginia' },
-  { label: 'Wisconsin' },
-  { label: 'Wyoming' },
+  { label: "Alabama" },
+  { label: "Alaska" },
+  { label: "Arizona" },
+  { label: "Arkansas" },
+  { label: "California" },
+  { label: "Colorado" },
+  { label: "Connecticut" },
+  { label: "Delaware" },
+  { label: "Florida" },
+  { label: "Georgia" },
+  { label: "Hawaii" },
+  { label: "Idaho" },
+  { label: "Illinois" },
+  { label: "Indiana" },
+  { label: "Iowa" },
+  { label: "Kansas" },
+  { label: "Kentucky" },
+  { label: "Louisiana" },
+  { label: "Maine" },
+  { label: "Maryland" },
+  { label: "Massachusetts" },
+  { label: "Michigan" },
+  { label: "Minnesota" },
+  { label: "Mississippi" },
+  { label: "Missouri" },
+  { label: "Montana" },
+  { label: "Nebraska" },
+  { label: "Nevada" },
+  { label: "New Hampshire" },
+  { label: "New Jersey" },
+  { label: "New Mexico" },
+  { label: "New York" },
+  { label: "North Carolina" },
+  { label: "North Dakota" },
+  { label: "Ohio" },
+  { label: "Oklahoma" },
+  { label: "Oregon" },
+  { label: "Pennsylvania" },
+  { label: "Rhode Island" },
+  { label: "South Carolina" },
+  { label: "South Dakota" },
+  { label: "Tennessee" },
+  { label: "Texas" },
+  { label: "Utah" },
+  { label: "Vermont" },
+  { label: "Virginia" },
+  { label: "Washington" },
+  { label: "West Virginia" },
+  { label: "Wisconsin" },
+  { label: "Wyoming" },
 ];
 
 export class signup extends Component {
@@ -72,12 +75,12 @@ export class signup extends Component {
     this.enterEmail = this.enterEmail.bind(this);
 
     this.state = {
-      username: '',
-      password: '',
-      confirmPassword: '',
-      email: '',
-      stateLocation: '',
-      error: false,
+      username: "",
+      password: "",
+      confirmPassword: "",
+      email: "",
+      stateLocation: "",
+      error: "",
     };
   }
 
@@ -113,41 +116,40 @@ export class signup extends Component {
   }
 
   onSubmit(e) {
-    e.preventDefault();
+    if (this.state.password === this.state.confirmPassword) {
+      e.preventDefault();
 
-    const user = {
-      name: this.state.username,
-      email: this.state.email,
-      password: this.state.password,
-      confirmPassword: this.state.confirmPassword,
-      stateLocation: this.state.stateLocation,
-    };
+      const user = {
+        name: this.state.username,
+        email: this.state.email,
+        password: this.state.password,
+        confirmPassword: this.state.confirmPassword,
+        stateLocation: this.state.stateLocation,
+      };
 
-    this.setState({
-      username: '',
-      password: '',
-      confirmPassword: '',
-      email: '',
-      stateLocation: '',
-    });
-    axios
-    .post('http://localhost:5000/users/add', user)
-    .then((res) => console.log(res.data))
-    .catch((err) => alert("404 Not Found"));
-
-   
-
-
-    //axios.post('http://localhost:5000/users/add', user)
-    // .then(res => console.log(res.data))
-    // .catch(err =>this.setState({
-    //    error: true
-    // }))
+      this.setState({
+        username: "",
+        password: "",
+        confirmPassword: "",
+        email: "",
+        stateLocation: "",
+      });
+      axios
+        .post("http://localhost:5000/users/add", user)
+        .then((res) => console.log(res.data))
+        .catch((err) => alert("404 Not Found"));
+    } else {
+      e.preventDefault();
+      this.setState({
+        error: "Passwords did not match",
+      });
+    }
   }
 
   render() {
     return (
       <div>
+        <Image src={image} fluid />
         <h3 class="text-center">Sign Up</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3">
           <div className="form-group">
@@ -160,6 +162,7 @@ export class signup extends Component {
               onChange={this.enterUsername}
             />
             <label>Password: </label>
+            <small style = {{color: "red"}}>{this.state.error}</small>
             <input
               type="text"
               required
@@ -168,6 +171,7 @@ export class signup extends Component {
               onChange={this.enterPassword}
             />
             <label>Confirm Password: </label>
+            <small style = {{color: "red"}}>{this.state.error}</small>
             <input
               type="text"
               required

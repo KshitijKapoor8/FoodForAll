@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Select, { components } from 'react-select';
+import Select, { components } from "react-select";
 import makeAnimated from "react-select/animated";
-import axios from 'axios';
-
+import axios from "axios";
+import "../App.css";
+import image from "../hiker.svg";
+import Image from "react-bootstrap/Image";
 
 const animatedComponents = makeAnimated();
 
@@ -80,7 +82,7 @@ export class signupbank extends Component {
       email: "",
       address: "",
       stateLocation: "Choose State",
-      error: false,
+      error: "",
     };
   }
 
@@ -122,37 +124,46 @@ export class signupbank extends Component {
   }
 
   onSubmit(e) {
-    e.preventDefault();
+    if (this.state.password === this.state.confirmPassword) {
+      e.preventDefault();
 
-    const user = {
-      bankName: this.state.username,
-      email: this.state.email,
-      password: this.state.password,
-      address: this.state.address,
-      stateLocation: this.state.stateLocation,
-    };
+      const user = {
+        bankName: this.state.username,
+        email: this.state.email,
+        password: this.state.password,
+        address: this.state.address,
+        stateLocation: this.state.stateLocation,
+      };
 
-    this.setState({
-      username: "",
-      password: "",
-      confirmPassword: "",
-      email: "",
-      address: "",
-      stateLocation: "",
-    });
+      this.setState({
+        username: "",
+        password: "",
+        confirmPassword: "",
+        email: "",
+        address: "",
+        stateLocation: "",
+      });
 
-    axios.post('http://localhost:5000/banks/add', user)
-    .then(res => console.log(res.data))
-    .catch(err => alert("404 Not Found"));
+      axios
+        .post("http://localhost:5000/banks/add", user)
+        .then((res) => console.log(res.data))
+        .catch((err) => alert("404 Not Found"));
 
-    window.location = "/";
-
-    
+      console.log("hello");
+      window.location = "/";
+    } else {
+      e.preventDefault();
+      this.setState({
+        error: "Passwords did not match",
+      });
+    }
   }
 
   render() {
     return (
+      
       <div>
+        <Image src={image} fluid />
         <h3 class="text-center">Sign Up-Food Bank</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
@@ -165,6 +176,7 @@ export class signupbank extends Component {
               onChange={this.enterUsername}
             />
             <label>Password: </label>
+            <small style = {{color: "red"}}>{this.state.error}</small>
             <input
               type="text"
               required
@@ -173,6 +185,7 @@ export class signupbank extends Component {
               onChange={this.enterPassword}
             />
             <label>Confirm Password: </label>
+            <small style = {{color: "red"}}>{this.state.error}</small>
             <input
               type="text"
               required

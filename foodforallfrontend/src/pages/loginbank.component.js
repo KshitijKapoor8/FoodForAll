@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import "../App.css";
+import image from "../hiker.svg";
+import Image from 'react-bootstrap/Image'
+
 
 export class loginbank extends Component {
   constructor(props) {
@@ -17,7 +21,7 @@ export class loginbank extends Component {
     this.state = {
       email: "",
       password: "",
-      error: false
+      error: "",
     };
   }
 
@@ -51,7 +55,9 @@ export class loginbank extends Component {
     axios
       .post('http://localhost:5000/banks/login', user)
       .then((res) => console.log(res.data))
-      .catch((err) => alert("404 Not Found"));
+      .catch((err) => this.setState({
+        error: "Your username or passward was incorrect"
+      }) );
 
 
   }
@@ -59,6 +65,7 @@ export class loginbank extends Component {
   render() {
     return (
       <div>
+        <Image src={image} fluid/>
         <h3 class="text-center">Food Bank Login</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
@@ -79,6 +86,9 @@ export class loginbank extends Component {
               onChange={this.enterPassword}
             />
           </div>
+          <small style = {{color: "red"}}>
+            {this.state.error}
+          </small>
           <div className="form-group" class="text-center">
             <input
               type="submit"

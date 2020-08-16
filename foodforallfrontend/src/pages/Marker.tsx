@@ -4,11 +4,14 @@ import './Marker.css';
 const Marker = (props: any) => {
     const { color, name, id } = props;
     return (
-      <div className="marker"
-        style={{ backgroundColor: color, cursor: 'pointer'}}
-        title={name}
-        
-      />
+      <div>
+        <div
+          className="pin bounce"
+          style={{ backgroundColor: color, cursor: 'pointer' }}
+          title={name}
+        />
+        <div className="pulse" />
+      </div>
     );
   };
 

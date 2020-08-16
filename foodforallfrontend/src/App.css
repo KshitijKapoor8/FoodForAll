@@ -1,7 +1,5 @@
-.card{
-  box-shadow: black;
-}
-
-.body{
-  background-color: black;
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');body {
+  font-family: 'Alata', sans-serif;
+  padding: 0; margin: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }

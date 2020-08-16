@@ -9,12 +9,14 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
 
-    bank = req.body.bank;
+    bankName = req.body.bankName;
+    bankAddress = req.body.bankAddress;
+    bankState = req.body.bankState;
     item = req.body.item;
     itemCount = Number(req.body.itemCount);
     itemNeeded = Number(req.body.itemNeeded);
     
-    const newPost = new Post({bank, item, itemCount, itemNeeded});
+    const newPost = new Post({bankName, bankAddress, bankState, item, itemCount, itemNeeded});
 
     newPost.save()
         .then(() => res.json('Post added!'))
@@ -24,10 +26,12 @@ router.route('/add').post((req, res) => {
 router.route('/update/:_id').post((req, res) => {
     Post.findById(req.params._id)
         .then(post => {
-            post.bank = req.body.bank;
-            post.item = req.body.item;
-            post.itemCount = Number(req.body.itemCount);
-            post.itemNeeded = Number(req.body.itemNeeded);
+            bankName = req.body.bankName;
+            bankAddress = req.body.bankAddress;
+            bankState = req.body.bankState;
+            item = req.body.item;
+            itemCount = Number(req.body.itemCount);
+            itemNeeded = Number(req.body.itemNeeded);
 
             post.save()
                 .then(() => res.json('Post updated!'))

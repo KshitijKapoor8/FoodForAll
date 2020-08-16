@@ -3,7 +3,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-    bank: {
+    bankName: {
+        type: String,
+        required: true,
+    },
+    bankAddress: {
+        type: String,
+        required: true,
+    },
+    bankState: {
         type: String,
         required: true,
     },
