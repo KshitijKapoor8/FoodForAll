@@ -1,7 +1,7 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import image from '../hiker.svg'
-import {Card, Button} from 'react-bootstrap'
+import {Card, CardDeck} from 'react-bootstrap'
 import "../App.css";
 
 
@@ -46,44 +46,42 @@ function home() {
 
         </div>
       </Parallax>
-      <div style={{ height: '100vh' }}></div>
-      <div className="cardGroup">
-        <Card className='card1'>
-          <Card.Img variant="top" src=''/>
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-
-        <Card className='card2'>
-          <Card.Img variant="top" src=''/>
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-
-        <Card className='card3'>
-          <Card.Img variant="top" src=''/>
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-      </div>
+      <div style={{ height: '3vh' }}></div>
+      <div style={{marginTop: 20, marginBottom: 20, width: 900}}>
+        <CardDeck >
+          <Card className="mx-auto">
+            <Card.Img variant="top" src="https://picsum.photos/100/100" />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="https://picsum.photos/100/100" />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This card has supporting text below as a natural lead-in to additional
+                content.{' '}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="https://picsum.photos/100/100" />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural lead-in to
+                additional content. This card has even longer content than the first to
+                show that equal height action.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </CardDeck>
+        </div>
       
 
 
