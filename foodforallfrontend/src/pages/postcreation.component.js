@@ -74,8 +74,14 @@ export class postcreation extends Component {
     return (
       <div>
         <Image src={image} fluid />
-        <h3 class="text-center">Make a food request!</h3>
-        <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
+        <h3 class="text-center"  style={{
+                  align: "center",
+                  marginTop: "1rem"
+                }}>Make a food request!</h3>
+        <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 "  style={{
+                  align: "center",
+                  marginTop: "1rem"
+                }}>
           <div className="form-group">
             <label>Which Item do you need?: </label>
             <Select
@@ -83,6 +89,7 @@ export class postcreation extends Component {
               components={animatedComponents}
               onChange={this.selectItem}
               multiple={false}
+              style = {{margin: "mx-auto"}}
             />
             <label>Item Count: </label>
             <input
@@ -97,6 +104,11 @@ export class postcreation extends Component {
                 type="submit"
                 value="Submit"
                 className="btn btn-primary"
+                style={{
+                  align: "center",
+                  marginTop: "1rem"
+                }}
+                
               />
             </div>
           </div>
