@@ -33,4 +33,25 @@ router.route('/:_id').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 })
 
+router.route('/login').post((req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+    
+    Bank.findOne({email})
+        .then(banks => {
+            if(password === banks.password)
+            {
+                res.json(banks._id);
+            }
+            else
+            {
+                res.status(404).json('Wrong Credentials!');
+            }
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+
+    
+})
+
+
 module.exports = router;
