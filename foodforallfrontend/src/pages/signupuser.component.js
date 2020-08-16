@@ -8,7 +8,7 @@ import "../App.css";
 import image from "../hiker.svg";
 import Image from "react-bootstrap/Image";
 
-const animatedComponents = makeAnimated();
+const animatedComponents = makeAnimated(); //Makes select form have cool animation
 
 const States = [
   { label: "Alabama" },
@@ -67,14 +67,14 @@ export class signup extends Component {
   constructor(props) {
     super(props);
 
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this); //Binds fucntions to correct var
     this.enterUsername = this.enterUsername.bind(this);
     this.enterPassword = this.enterPassword.bind(this);
     this.confirmPassword = this.confirmPassword.bind(this);
     this.enterState = this.enterState.bind(this);
     this.enterEmail = this.enterEmail.bind(this);
 
-    this.state = {
+    this.state = { //Sets default state of var
       username: "",
       password: "",
       confirmPassword: "",
@@ -84,42 +84,42 @@ export class signup extends Component {
     };
   }
 
-  enterUsername(e) {
+  enterUsername(e) { //Sets username from form
     this.setState({
       username: e.target.value,
     });
   }
 
-  enterPassword(e) {
+  enterPassword(e) { //Sets password from form
     this.setState({
       password: e.target.value,
     });
   }
 
-  confirmPassword(e) {
+  confirmPassword(e) {//Confirm password from form
     this.setState({
       confirmPassword: e.target.value,
     });
   }
 
-  enterState(optionSelected) {
+  enterState(optionSelected) {//Sets the state from the form
     const label = optionSelected.label;
     this.setState({
       stateLocation: label,
     });
   }
 
-  enterEmail(e) {
+  enterEmail(e) { //Sets the email from the form
     this.setState({
       email: e.target.value,
     });
   }
 
   onSubmit(e) {
-    if (this.state.password === this.state.confirmPassword) {
+    if (this.state.password === this.state.confirmPassword) { //Makes sure the passwords match
       e.preventDefault();
 
-      const user = {
+      const user = { //Saves var to user 
         name: this.state.username,
         email: this.state.email,
         password: this.state.password,
@@ -127,7 +127,7 @@ export class signup extends Component {
         stateLocation: this.state.stateLocation,
       };
 
-      this.setState({
+      this.setState({ //Sets state to default
         username: "",
         password: "",
         confirmPassword: "",
@@ -135,11 +135,11 @@ export class signup extends Component {
         stateLocation: "",
       });
       axios
-        .post("http://localhost:5000/users/add", user)
+        .post("http://localhost:5000/users/add", user) //Sends post request to database
         .then((res) => console.log(res.data))
         .catch((err) => alert("404 Not Found"));
     } else {
-      e.preventDefault();
+      e.preventDefault(); //Error if passwords do not match
       this.setState({
         error: "Passwords did not match",
       });
@@ -147,10 +147,9 @@ export class signup extends Component {
   }
 
   render() {
-    return (
+    return ( //Render form
       <div>
-        <Image src={image} fluid />
-        <h3 class="text-center">Sign Up</h3>
+        <h3 class="text-center" style={{ marginTop: "7rem" }}>Sign Up</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3">
           <div className="form-group">
             <label>Username: </label>

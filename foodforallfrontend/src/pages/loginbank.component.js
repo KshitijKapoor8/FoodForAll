@@ -10,15 +10,15 @@ export class loginbank extends Component {
   constructor(props) {
     super(props);
 
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this); //Binds the functions to corrects props
     this.enterEmail = this.enterEmail.bind(this);
     this.enterPassword = this.enterPassword.bind(this);
 
-    this.context = {
+    this.context = { //Sets the context of email
       email:""
     }
 
-    this.state = {
+    this.state = { //Sets the state of the variable
       email: "",
       password: "",
       error: "",
@@ -26,48 +26,46 @@ export class loginbank extends Component {
   }
 
 
-  enterPassword(e) {
+  enterPassword(e) { //Sets the password from field
     this.setState({
       password: e.target.value,
     });
   }
 
-  enterEmail(e) {
+  enterEmail(e) { //Sets the email from field
     this.setState({
         email: e.target.value,
       });
   }
 
-  onSubmit(e) {
+  onSubmit(e) { //Submit the form
     e.preventDefault();
 
-    const user = {
+    const user = { //Saves variable to user
       email: this.state.email,
       password: this.state.password,
     };
 
 
-    this.setState({
-      email: "",
+    this.setState({ //Sets state back to default
+      email: "", 
       password: ""
     });
 
-
     axios
-      .post('http://localhost:5000/banks/login', user)
-      .then((res) => {window.$loggedin='bank'; localStorage.setItem("checkiflogged", window.$loggedin); window.$bankToken=res.data; localStorage.setItem("bankToken", window.$bankToken); console.log(window.$bankToken);  console.log(window.$loggedin); window.location = '/';})
+      .post('http://localhost:5000/banks/login', user) //Sends post request to the database
+      .then((res) => {window.$loggedin='bank'; localStorage.setItem("checkiflogged", window.$loggedin); window.$bankToken=res.data; localStorage.setItem("bankToken", window.$bankToken); console.log(window.$bankToken);  console.log(window.$loggedin); window.location = '/';}) //Saves if User is logged in as bank or user
       .catch((err) => this.setState({
-        error: "Your username or passward was incorrect"
+        error: "Your username or passward was incorrect" //Sends error if 404 comes out
       }) );
 
 
   }
 
   render() {
-    return (
+    return ( //Render the form
       <div>
-        <Image src={image}  fluid/>
-        <h3 class="text-center">Food Bank Login</h3>
+        <h3 class="text-center" style={{ marginTop: "10rem" }}>Food Bank Login</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
             <label>Email: </label>

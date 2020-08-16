@@ -9,7 +9,7 @@ import { Card, CardDeck } from "react-bootstrap";
 import "../App.css";
 import Image from 'react-bootstrap/Image'
 
-const pBottomStyle = {
+const pBottomStyle = { 
   background: "#000",
   height: "1000px",
   margin: "0"
