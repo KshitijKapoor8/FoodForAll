@@ -6,7 +6,7 @@ import login from '../pages/loginuser.component.js';
 import loginbank from '../pages/loginbank.component.js'
 
 function checkUserType(){
-    if(localStorage.getItem('checkiflogged', window.$loggedin) === 'true' && localStorage.getItem('bankToken', window.$bankToken) !== '')
+    if(localStorage.getItem('checkiflogged', window.$loggedin) === 'bank')
         return <Link to="/postcreation" className="nav-link h4">Create A Request</Link>;
     else
         return;
