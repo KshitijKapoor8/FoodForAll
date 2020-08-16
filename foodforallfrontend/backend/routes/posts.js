@@ -21,4 +21,19 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/update/:_id').post((req, res) => {
+    Post.findById(req.params._id)
+        .then(post => {
+            post.bank = req.body.bank;
+            post.item = req.body.item;
+            post.itemCount = Number(req.body.itemCount);
+            post.itemNeeded = Number(req.body.itemNeeded);
+
+            post.save()
+                .then(() => res.json('Post updated!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;

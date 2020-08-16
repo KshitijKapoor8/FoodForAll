@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/KshitijKapoor8/FoodForAll/issues"
   },
-  "homepage": "https://github.com/KshitijKapoor8/FoodForAll#readme"
+  "homepage": "https://github.com/KshitijKapoor8/FoodForAll#readme",
+  "dependencies": {
+    "react-bootstrap": "^1.3.0"
+  }
 }
