@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
+window.$userToken = '';
+window.$loggedin = false;
+
 export class loginuser extends Component {
+   
   constructor(props) {
     super(props);
-
     this.onSubmit = this.onSubmit.bind(this);
     this.enterEmail = this.enterEmail.bind(this);
     this.enterPassword = this.enterPassword.bind(this);
@@ -44,9 +48,12 @@ export class loginuser extends Component {
 
     axios
       .post('http://localhost:5000/users/login', user)
-      .then((res) => console.log(res.data))
+      .then((res) => {console.log(res.data); window.$userToken=res.data; console.log(window.$userToken); window.$loggedin=true})
       .catch((err) => alert("404 Not Found")({
       }));
+
+      window.location='/'
+      
 
       
   }

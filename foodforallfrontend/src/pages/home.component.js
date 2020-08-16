@@ -42,15 +42,15 @@ function home() {
                   
         )}
       >
-        <div style={{ height: 835 }}>
+        <div style={{ height: 900 }}>
 
         </div>
       </Parallax>
-      <div style={{ height: '3vh' }}></div>
-      <div style={{marginTop: 20, marginBottom: 20, width: 900}}>
-        <CardDeck >
-          <Card className="mx-auto">
-            <Card.Img variant="top" src="https://picsum.photos/100/100" />
+      <div style={ {backgroundcolor: "green:"}, { height: '3vh'}}></div>
+      <div>
+        <CardDeck>
+          <Card>
+            <Card.Img variant="top" src=""/>
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
@@ -60,7 +60,7 @@ function home() {
             </Card.Body>
           </Card>
           <Card>
-            <Card.Img variant="top" src="https://picsum.photos/100/100" />
+            <Card.Img variant="top" src="" />
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
@@ -70,7 +70,7 @@ function home() {
             </Card.Body>
           </Card>
           <Card>
-            <Card.Img variant="top" src="https://picsum.photos/100/100" />
+            <Card.Img variant="top" src="" />
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>

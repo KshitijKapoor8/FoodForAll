@@ -2,16 +2,14 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import "../App.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import axios from 'axios'
 
-import loginuser from '../pages/loginuser.component.js';
+import login from '../pages/loginuser.component.js';
 import loginbank from '../pages/loginbank.component.js'
 
 export default class navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-light bg-light navbar-expand-lg">
-                
                 <ul className="nav navbar-nav">
                     <li className="navbar-item">
                         <Link to="/" class = "nav-link h2">FoodForAll</Link>
@@ -30,21 +28,6 @@ export default class navbar extends Component {
                     <li className="navbar-item">
                         <Link to="/Finder" className="nav-link h4">Finder</Link>
                     </li>
-                </ul>
-
-                
-                <ul className="nav navbar-nav ml-auto">
-                    <li>
-                        <a>{this.context.username}</a>
-                    </li> 
-
-                    <li className="navbar-item">
-                        <a class = "nav-link h2"></a>
-                    </li>  
-
-                    <li className="navbar-item">
-                        <a class = "nav-link h2"></a>
-                    </li>  
                 </ul>
             </nav>
         )
