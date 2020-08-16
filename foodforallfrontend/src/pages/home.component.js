@@ -41,7 +41,7 @@ function home() {
           </div>
         )}
       >
-        <div style={{ height: 835 }}></div>
+        <div style={{ height: 700 }}></div>
       </Parallax>
       <div style={{ height: "3vh" }}></div>
         <CardDeck>
