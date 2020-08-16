@@ -10,6 +10,10 @@ export class loginbank extends Component {
     this.enterEmail = this.enterEmail.bind(this);
     this.enterPassword = this.enterPassword.bind(this);
 
+    this.context = {
+      username:""
+    }
+
     this.state = {
       email: "",
       password: "",
@@ -34,7 +38,7 @@ export class loginbank extends Component {
     e.preventDefault();
 
     const user = {
-      email: this.state.username,
+      username: this.state.username,
       password: this.state.password,
     };
 
