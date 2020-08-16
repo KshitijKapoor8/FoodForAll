@@ -21,9 +21,9 @@ const mapStyles = {
 
 
 
-function switchNav(){
-        console.log(window.$loggedin);
-        if(window.$loggedin)
+window.$switchNav = function switchNav(){
+        console.log(localStorage.getItem("checkiflogged", window.$loggedin));
+        if(localStorage.getItem("checkiflogged", window.$loggedin))
         {
           return <Loggedinnavbar/>;
         }
@@ -36,7 +36,7 @@ function App() {
   
   return (
     <Router>
-      {switchNav()}
+      {window.$switchNav()}
       <Route path='/' exact component={home} />
       <Route path='/donate' exact component={donate} />
       <Route path='/finder' exact component={finder} />
