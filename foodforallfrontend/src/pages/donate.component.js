@@ -18,6 +18,7 @@ export class donate extends Component {
 
     this.state = { 
         posts: [],
+        bank: []
      };
 
     axios
@@ -26,23 +27,25 @@ export class donate extends Component {
         this.setState({
           posts: response.data,
         });
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
 
-    console.log(this.state.posts);
-    
-    console.log(this.state.posts)
+
+      const x = this.state.post.bank;
+      console.log(x);
     this.state.posts.forEach((post) => {
         const x = post.bank;
-        console.log(x);
+        console.log("hello");
         axios
           .get('/banks/' + x)
           .then((res) => {
             this.setState({
                 banks: this.state.banks.push(res.data)
             })
+            console.log(res.data);
           })
           .catch((err) => console.log('Error: ' + err));
       });
