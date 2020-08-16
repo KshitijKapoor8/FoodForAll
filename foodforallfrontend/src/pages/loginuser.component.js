@@ -52,7 +52,7 @@ export class loginuser extends Component {
 
     axios
       .post('http://localhost:5000/users/login', user)
-      .then((res) => {window.$loggedin=true; window.$userToken=res.data; console.log(window.$userToken);  console.log(window.$loggedin); return <Loggedinnavbar/>;})
+      .then((res) => {window.$loggedin=true;  console.log(window.$loggedin); if(window.$loggedin === true) return Loggedinnavbar})
       .catch((err) => this.setState({
         error: "Your username or passward was incorrect"
       }));
