@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { Button, Card, ProgressBar } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  ProgressBar,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
@@ -37,25 +43,28 @@ export class donate extends Component {
     const renderCard = (card, index) => {
       return (
         <Card
-          //border="success"
           className="mb-3"
-          border='success'
-          text='dark'
+          border="success"
+          text="dark"
           style={{
             width: "99%",
-            height: "17rem",
+            height: "25rem",
             align: "right",
           }}
         >
           <Card.Body>
-            <Card.Title  >{card.item}</Card.Title>
+            <Card.Title>{card.item}</Card.Title>
             <Card.Text> {card.bankName} </Card.Text>
             <Card.Text> {card.bankAddress} </Card.Text>
             <Card.Text> {card.bankState} </Card.Text>
+
             <ProgressBar now={(card.itemCount / card.itemNeeded) * 100} />
-            <div className="mt-3">
-              <Button variant="primary">Go somewhere</Button>
-            </div>
+            <InputGroup className="mt-5">
+              <FormControl aria-describedby="basic-addon2" />
+              <InputGroup.Append>
+                <Button variant="primary">Thank You</Button>
+              </InputGroup.Append>
+            </InputGroup>
           </Card.Body>
         </Card>
       );
