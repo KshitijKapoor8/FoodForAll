@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
 
 export class loginbank extends Component {
   constructor(props) {
@@ -10,6 +9,10 @@ export class loginbank extends Component {
     this.enterUsername = this.enterUsername.bind(this);
     this.enterEmail = this.enterEmail.bind(this);
     this.enterPassword = this.enterPassword.bind(this);
+
+    this.context = {
+      username:""
+    }
 
     this.state = {
       username: "",
@@ -41,7 +44,7 @@ export class loginbank extends Component {
     e.preventDefault();
 
     const user = {
-      email: this.state.username,
+      username: this.state.username,
       password: this.state.password,
     };
 
@@ -50,10 +53,6 @@ export class loginbank extends Component {
       username: "",
     });
 
-    axios
-      .post('http://localhost:5000/banks/login', user)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log('Error: ' + err));
 
     window.location = '/'
 

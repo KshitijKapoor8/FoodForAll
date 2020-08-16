@@ -43,7 +43,10 @@ export class loginuser extends Component {
 
     axios
       .post('http://localhost:5000/users/login', user)
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        console.log(res.data);
+        this.context.username = user.username;
+      })
       .catch((err) => console.log('Error: ' + err));
 
   }

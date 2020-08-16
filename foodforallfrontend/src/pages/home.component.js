@@ -1,6 +1,6 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
-import image from '../Wheatfield1.jpg'
+import image from '../lanscape.jpg'
 
 
 
@@ -45,12 +45,6 @@ function home() {
         </div>
       </Parallax>
       <div style={{ height: '100vh' }}></div>
-
-      <div style={pBottomStyle}>
-        Scroll Up and Down this page to see the parallax scrolling effect.
-        This div is just here to enable scrolling.
-        Tip: Try to remove the background-attachment property to remove the scrolling effect.
-      </div>
 
 
     </div>

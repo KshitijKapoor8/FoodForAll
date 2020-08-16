@@ -35,11 +35,7 @@ export default class navbar extends Component {
                 
                 <ul className="nav navbar-nav ml-auto">
                     <li>
-                        {
-                        state = {username:''};
-                        axios.get("http://localhost:5000/users/")
-                        .then(res => this.setState{res})
-                        }
+                        <a>{this.context.username}</a>
                     </li> 
 
                     <li className="navbar-item">
