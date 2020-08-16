@@ -8,7 +8,12 @@ import { Button, Card, ProgressBar } from "react-bootstrap";
 import login from '../pages/loginuser.component.js';
 import loginbank from '../pages/loginbank.component.js'
 
-
+function checkUserType(){
+    if(localStorage.getItem('checkiflogged', window.$loggedin) === 'true' && localStorage.getItem('bankToken', window.$bankToken) !== '')
+        return <Link to="/postcreation" className="nav-link h4">Create A Request</Link>;
+    else
+        return;
+}
 
 export default class navbar extends Component {
     render() {
@@ -34,11 +39,15 @@ export default class navbar extends Component {
                     <li className="navbar-item">
                         <Link to="/Finder" className="nav-link h4">Finder</Link>
                     </li>
+
+                    <li className="navbar-item">
+                        {checkUserType()}
+                    </li>
                 </ul>
 
                 <ul className = "nav navbar-nav ml-auto">
                     <li className="navbar-item">
-                        <Button variant="outline-danger" onClick = {() => {window.$loggedin=false; localStorage.setItem("checkiflogged", window.$loggedin); window.$switchNav(); window.location = '/';}} className="nav-link h4">Logout</Button>
+                        <Button variant="danger" onClick = {() => {window.$loggedin=false; localStorage.setItem("checkiflogged", window.$loggedin); window.$switchNav(); window.location = '/';}} className="nav-link h4">Logout</Button>
                     </li>
                 </ul>
             </nav>

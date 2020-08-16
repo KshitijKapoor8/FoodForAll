@@ -5,7 +5,7 @@ import "../App.css";
 import image from "../hiker.svg";
 import Image from 'react-bootstrap/Image'
 
-
+window.$bankToken = "";
 export class loginbank extends Component {
   constructor(props) {
     super(props);
@@ -52,9 +52,10 @@ export class loginbank extends Component {
       password: ""
     });
 
+
     axios
       .post('http://localhost:5000/banks/login', user)
-      .then((res) => console.log(res.data))
+      .then((res) => {window.$loggedin=true; localStorage.setItem("checkiflogged", window.$loggedin); window.$bankToken=res.data; localStorage.setItem("bankToken", window.$bankToken); console.log(window.$bankToken);  console.log(window.$loggedin); window.location = '/';})
       .catch((err) => this.setState({
         error: "Your username or passward was incorrect"
       }) );

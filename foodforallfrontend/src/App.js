@@ -26,17 +26,6 @@ window.$switchNav = function switchNav() {
 
 
 
-window.$switchNav = function switchNav(){
-  if(localStorage.getItem("checkiflogged", window.$loggedin) === 'true')
-  {
-    return <Loggedinnavbar/>;
-  }
-  else
-  {
-    return <Navbar/>;
-  }
-}
-
 
 function App() {
   return (
