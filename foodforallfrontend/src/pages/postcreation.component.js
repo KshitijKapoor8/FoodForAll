@@ -9,7 +9,6 @@ import image from "../hiker.svg";
 import Image from "react-bootstrap/Image";
 import "../App.css";
 
-
 const animatedComponents = makeAnimated();
 
 const Food = [
@@ -45,32 +44,31 @@ export class postcreation extends Component {
 
     this.state = {
       item: "",
-      count: ""
+      count: "",
     };
   }
 
-  selectItem(e) {
+  enterCount(e) {
     this.setState({
-      item: e.target.value,
-    })
+      count: e.target.value,
+    });
   }
 
-  enterCount(optionSelected) {
+  selectItem(optionSelected) {
     const label = optionSelected.label;
     this.setState({
-      count: label
-    })
+      item: label,
+    });
   }
   onSubmit(e) {
     const submit = {
       item: this.state.item,
-      count: this.state.count
-    }
+      count: this.state.count,
+    };
     this.state = {
       item: "",
-      count: ""
+      count: "",
     };
-
   }
   render() {
     return (
@@ -79,24 +77,28 @@ export class postcreation extends Component {
         <h3 class="text-center">Make a food request!</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
-          <label>Which Item do you need?: </label>
+            <label>Which Item do you need?: </label>
             <Select
               options={Food}
               components={animatedComponents}
               onChange={this.selectItem}
               multiple={false}
             />
-          <label>Item Count: </label>
-          <input
+            <label>Item Count: </label>
+            <input
               type="text"
               required
               className="form-control"
               value={this.state.count}
               onChange={this.enterCount}
             />
-         
-
-
+            <div className="form-group" class="text-center">
+              <input
+                type="submit"
+                value="Submit"
+                className="btn btn-primary"
+              />
+            </div>
           </div>
         </form>
       </div>

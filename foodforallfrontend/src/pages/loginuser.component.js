@@ -54,7 +54,7 @@ export class loginuser extends Component {
       .post('http://localhost:5000/users/login', user)
       .then((res) => {window.$loggedin=true; localStorage.setItem("checkiflogged", window.$loggedin); window.$userToken=res.data; localStorage.setItem("userToken", window.$userToken); console.log(window.$userToken);  console.log(window.$loggedin); window.location = '/';})
       .catch((err) => this.setState({
-        error: "Your username or passward was incorrect "+err 
+        error: "Your username or passward was incorrect " 
       }));
 
       
