@@ -7,23 +7,16 @@ export class loginbank extends Component {
     super(props);
 
     this.onSubmit = this.onSubmit.bind(this);
-    this.enterUsername = this.enterUsername.bind(this);
     this.enterEmail = this.enterEmail.bind(this);
     this.enterPassword = this.enterPassword.bind(this);
 
     this.state = {
-      username: "",
-      password: "",
       email: "",
+      password: "",
       error: false
     };
   }
 
-  enterUsername(e) {
-    this.setState({
-      username: e.target.value,
-    });
-  }
 
   enterPassword(e) {
     this.setState({
@@ -47,31 +40,31 @@ export class loginbank extends Component {
 
 
     this.setState({
-      username: "",
+      email: "",
+      password: ""
     });
 
     axios
       .post('http://localhost:5000/banks/login', user)
       .then((res) => console.log(res.data))
-      .catch((err) => console.log('Error: ' + err));
+      .catch((err) => alert("404 Not Found"));
 
-    window.location = '/'
 
   }
 
   render() {
     return (
       <div>
-        <h3 class="text-center">Login</h3>
+        <h3 class="text-center">Food Bank Login</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
-            <label>Username: </label>
+            <label>Email: </label>
             <input
               type="text"
               required
               className="form-control"
-              value={this.state.username}
-              onChange={this.enterUsername}
+              value={this.state.email}
+              onChange={this.enterEmail}
             />
             <label>Password: </label>
             <input
@@ -80,14 +73,6 @@ export class loginbank extends Component {
               className="form-control"
               value={this.state.password}
               onChange={this.enterPassword}
-            />
-            <label>Email: </label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              value={this.state.email}
-              onChange={this.enterEmail}
             />
           </div>
           <div className="form-group" class="text-center">

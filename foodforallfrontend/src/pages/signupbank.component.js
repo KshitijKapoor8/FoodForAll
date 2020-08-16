@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Select from "react-select";
+import Select, { components } from 'react-select';
 import makeAnimated from "react-select/animated";
 import axios from 'axios';
+
 
 const animatedComponents = makeAnimated();
 
@@ -142,7 +143,7 @@ export class signupbank extends Component {
 
     axios.post('http://localhost:5000/banks/add', user)
     .then(res => console.log(res.data))
-    .catch(err => console.log("Error: " + err));
+    .catch(err => alert("404 Not Found"));
 
     window.location = "/";
 

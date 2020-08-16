@@ -1,6 +1,6 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
-import image from '../Wheatfield1.jpg'
+import image from '../hiker.svg'
 
 
 
