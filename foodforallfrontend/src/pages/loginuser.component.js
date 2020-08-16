@@ -4,7 +4,7 @@ import axios from "axios";
 import "../App.css";
 import image from "../hiker.svg";
 import Image from "react-bootstrap/Image";
-import '../App.js'
+import App from '../App.js'
 import Loggedinnavbar from '../components/loggedinnavbar.component.js';
 
 window.$userToken = '';
@@ -52,9 +52,13 @@ export class loginuser extends Component {
 
     axios
       .post('http://localhost:5000/users/login', user)
+<<<<<<< HEAD
       .then((res) => {window.$loggedin=true;  console.log(window.$loggedin); if(window.$loggedin === true) return Loggedinnavbar})
+=======
+      .then((res) => { localStorage.setItem("checkiflogged", window.$loggedin); window.location = '/'; window.$loggedin=true; window.$userToken=res.data; console.log(window.$userToken);  console.log(window.$loggedin); window.$switchNav();})
+>>>>>>> b29c7dd73d7a4de0bf462a12aacf4348998ccbcc
       .catch((err) => this.setState({
-        error: "Your username or passward was incorrect"
+        error: "Your username or passward was incorrect "+err 
       }));
 
       
