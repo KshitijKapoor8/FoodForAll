@@ -53,79 +53,11 @@ export class signupbank extends Component {
     };
   }
 
-  enterUsername(e) {
-    this.setState({
-      username: e.target.value,
-    });
-  }
-
-  enterPassword(e) {
-    this.setState({
-      password: e.target.value,
-    });
-  }
-
-  confirmPassword(e) {
-    this.setState({
-      confirmPassword: e.target.value,
-    });
-  }
-
-  enterState(optionSelected) {
-    const label = optionSelected.label;
-    this.setState({
-      stateLocation: label,
-    });
-  }
-
-  enteraddress(e) {
-    this.setState({
-      address: e.target.value,
-    });
-  }
-
-  enterEmail(e) {
-    this.setState({
-      email: e.target.value,
-    });
-  }
+  
 
   onSubmit(e) {
-    if (this.state.password === this.state.confirmPassword) {
-      e.preventDefault();
-
-      const user = {
-        bankName: this.state.username,
-        email: this.state.email,
-        password: this.state.password,
-        address: this.state.address,
-        stateLocation: this.state.stateLocation,
-      };
-
-      this.setState({
-        username: "",
-        password: "",
-        confirmPassword: "",
-        email: "",
-        address: "",
-        stateLocation: "",
-      });
-
-      axios
-        .post("http://localhost:5000/banks/add", user)
-        .then((res) => console.log(res.data))
-        .catch((err) => alert("404 Not Found"));
-
-      console.log("hello");
-      window.location = "/";
-    } else {
-      e.preventDefault();
-      this.setState({
-        error: "Passwords did not match",
-      });
-    }
+    
   }
-
   render() {
     return (
       <div>
