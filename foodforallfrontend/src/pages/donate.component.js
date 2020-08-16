@@ -46,7 +46,7 @@ export class donate extends Component {
   donate(id) {
 
   }
-
+  // to call this.myInput.value
   render() {
     const renderCard = (card, index) => {
       return (
@@ -67,14 +67,9 @@ export class donate extends Component {
             <Card.Text> {card.bankState} </Card.Text>
 
             <ProgressBar now={(card.itemCount / card.itemNeeded) * 100} />
-<<<<<<< HEAD
-            <InputGroup className="mt-5">
-              <FormControl aria-describedby="basic-addon2"  inputRef={ref => { this.myInput = ref; }} />
-=======
             <InputGroup className="mt-4" style={{ width: '20%' }}>
-              <FormControl aria-describedby="basic-addon2" />
->>>>>>> 7cc954a697fb7dc9e93aacc4cf8e9e6e4b826498
-              <InputGroup.Append>
+              <FormControl aria-describedby="basic-addon2" inputRef={ref => { this.myInput = ref; }} />       
+              <InputGroup.Append> 
                 <button
                   style={{
                     backgroundColor: '#007bff',
