@@ -85,10 +85,12 @@ export class donate extends Component {
                       bankAddress: card.bankAddress,
                       bankState: card.bankState,
                       item: card.item,
-                      itemCount: card.itemCount,
+                      itemCount: Number(card.itemCount + this.inputRef),
                       itemNeeded: card.itemNeeded
 
                     }
+                    console.log(this.myInput.value);
+
                     axios.post('http://localhost:5000/posts/update/' + card._id, obj).then((response) => {
                       console.log(response.data);
                       });
