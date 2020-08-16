@@ -27,8 +27,8 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/:_id').get((req, res) => {
-    Bank.findById(req.params._id) 
+router.route('/:id').get((req, res) => {
+    Bank.findById(req.params.id) 
         .then(bank => res.json(bank))
         .catch(err => res.status(400).json('Error: ' + err));
 })

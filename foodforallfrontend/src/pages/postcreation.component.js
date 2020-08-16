@@ -1,37 +1,37 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Select, { components } from "react-select";
-import makeAnimated from "react-select/animated";
-import axios from "axios";
-import "../App.css";
-import image from "../hiker.svg";
-import Image from "react-bootstrap/Image";
-import "../App.css";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Select, { components } from 'react-select';
+import makeAnimated from 'react-select/animated';
+import axios from 'axios';
+import '../App.css';
+import image from '../hiker.svg';
+import Image from 'react-bootstrap/Image';
+import '../App.css';
 
 const animatedComponents = makeAnimated();
 
 const Food = [
-  { label: "Applesauce" },
-  { label: "Canned Beans" },
-  { label: "Canned Chicken" },
-  { label: "Canned Fish (Tuna and Salmon)" },
-  { label: "Canned Meat (SPAM and Ham)" },
-  { label: "Canned Vegetables" },
-  { label: "Cooking Oils (Olive and Canola)" },
-  { label: "Crackers" },
-  { label: "Dried Herbs and Spices" },
-  { label: "Fruit (Canned or Dried)" },
-  { label: "Granola Bars" },
-  { label: "Instant Mashed Potatoes" },
-  { label: "Meals in a Box" },
-  { label: "Nuts" },
-  { label: "Pasta" },
-  { label: "Peanut Butter" },
-  { label: "Rice" },
-  { label: "Shelf-stable and Powdered Milk" },
-  { label: "Soup, Stew and Chili" },
-  { label: "Whole Grain Cereal" },
+  { label: 'Applesauce' },
+  { label: 'Canned Beans' },
+  { label: 'Canned Chicken' },
+  { label: 'Canned Fish (Tuna and Salmon)' },
+  { label: 'Canned Meat (SPAM and Ham)' },
+  { label: 'Canned Vegetables' },
+  { label: 'Cooking Oils (Olive and Canola)' },
+  { label: 'Crackers' },
+  { label: 'Dried Herbs and Spices' },
+  { label: 'Fruit (Canned or Dried)' },
+  { label: 'Granola Bars' },
+  { label: 'Instant Mashed Potatoes' },
+  { label: 'Meals in a Box' },
+  { label: 'Nuts' },
+  { label: 'Pasta' },
+  { label: 'Peanut Butter' },
+  { label: 'Rice' },
+  { label: 'Shelf-stable and Powdered Milk' },
+  { label: 'Soup, Stew and Chili' },
+  { label: 'Whole Grain Cereal' },
 ];
 
 export class postcreation extends Component {
@@ -40,17 +40,31 @@ export class postcreation extends Component {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.selectItem = this.selectItem.bind(this);
-    this.enterCount = this.enterCount.bind(this);
+    this.enteritemNeeded = this.enteritemNeeded.bind(this);
 
     this.state = {
-      item: "",
-      count: "",
+      bankName: '',
+      bankAddress: '',
+      bankState: '',
+      item: '',
+      itemCount: '',
+      itemNeeded: '',
     };
+
+    var x = localStorage.getItem('bankToken', window.$bankToken);
+    axios
+      .get('http://localhost:5000/banks/' + x)
+      .then((res) => {
+        this.setState({bankName : res.data.bankName, bankAddress : res.data.address, bankState : res.data.stateLocation, itemCount : 0});
+      })
+      .catch((err) => {
+        console.log('Error :' + err);
+      });
   }
 
-  enterCount(e) {
+  enteritemNeeded(e) {
     this.setState({
-      count: e.target.value,
+      itemNeeded: e.target.value,
     });
   }
 
@@ -62,13 +76,22 @@ export class postcreation extends Component {
   }
   onSubmit(e) {
     const submit = {
+      bankName: this.state.bankName,
+      bankAddress: this.state.bankAddress,
+      bankState: this.state.bankState,
       item: this.state.item,
-      count: this.state.count,
+      itemCount: this.state.itemCount,
+      itemNeeded: this.state.itemNeeded,
     };
     this.state = {
-      item: "",
-      count: "",
+      item: '',
+      itemNeeded: '',
     };
+    console.log(submit);
+
+    axios.post('http://localhost:5000/posts/add', submit)
+      .then(res => console.log(res.data))
+      .catch(err => console.log('Error: ' + err));
   }
   render() {
     return (
@@ -91,13 +114,13 @@ export class postcreation extends Component {
               multiple={false}
               style = {{margin: "mx-auto"}}
             />
-            <label>Item Count: </label>
+            <label>Item itemNeeded: </label>
             <input
               type="text"
               required
               className="form-control"
-              value={this.state.count}
-              onChange={this.enterCount}
+              value={this.state.itemNeeded}
+              onChange={this.enteritemNeeded}
             />
             <div className="form-group" class="text-center">
               <input
