@@ -1,0 +1,20 @@
+{
+  "name": "FoodForAll",
+  "version": "1.0.0",
+  "description": "npm install express mongoose cors react nodemon jquery popper.js axios\r npm install react-bootstrap bootstrap\r npm i react-scroll-parallax\r npm install react-parallax",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KshitijKapoor8/FoodForAll.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KshitijKapoor8/FoodForAll/issues"
+  },
+  "homepage": "https://github.com/KshitijKapoor8/FoodForAll#readme"
+}
