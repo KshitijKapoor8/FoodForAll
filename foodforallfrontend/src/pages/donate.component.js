@@ -43,7 +43,7 @@ export class donate extends Component {
           text='dark'
           style={{
             width: "100rem",
-            height: "15rem",
+            height: "17rem",
             align: "center",
           }}
         >
@@ -53,7 +53,7 @@ export class donate extends Component {
             <Card.Text> {card.bankAddress} </Card.Text>
             <Card.Text> {card.bankState} </Card.Text>
             <ProgressBar now={(card.itemCount / card.itemNeeded) * 100} />
-            <div className="mt-1">
+            <div className="mt-3">
               <Button variant="primary">Go somewhere</Button>
             </div>
           </Card.Body>
