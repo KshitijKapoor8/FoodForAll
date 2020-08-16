@@ -7,6 +7,7 @@ import login from '../pages/loginuser.component.js';
 import loginbank from '../pages/loginbank.component.js'
 
 
+
 export default class navbar extends Component {
     render() {
         return (
@@ -30,6 +31,12 @@ export default class navbar extends Component {
 
                     <li className="navbar-item">
                         <Link to="/Finder" className="nav-link h4">Finder</Link>
+                    </li>
+                </ul>
+
+                <ul className = "nav navbar-nav ml-auto">
+                    <li className="navbar-item">
+                        <button  onClick = {() => {window.$loggedin=false; localStorage.setItem("checkiflogged", window.$loggedin); window.$switchNav(); window.location = '/';}} className="nav-link h4">Logout</button>
                     </li>
                 </ul>
             </nav>

@@ -21,9 +21,9 @@ const mapStyles = {
 
 
 
-window.$switchNav = () => {
-        console.log(window.$loggedin);
-        if(window.$loggedin)
+window.$switchNav = function switchNav(){
+        console.log(localStorage.getItem("checkiflogged", window.$loggedin));
+        if(localStorage.getItem("checkiflogged", window.$loggedin))
         {
           return <Loggedinnavbar/>;
         }
