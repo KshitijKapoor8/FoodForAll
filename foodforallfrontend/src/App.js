@@ -25,17 +25,6 @@ window.$switchNav = function switchNav() {
 
 
 
-window.$switchNav = function switchNav(){
-  if(localStorage.getItem("checkiflogged", window.$loggedin) === 'true')
-  {
-    return <Loggedinnavbar/>;
-  }
-  else
-  {
-    return <Navbar/>;
-  }
-}
-
 
 function App() {
   return (
@@ -44,6 +33,7 @@ function App() {
       <Route path="/" exact component={home} />
       <Route path="/donate" exact component={donate} />
       <Route path="/finder" exact component={finder} />
+      
       <Route path="/userlogin" exact component={login} />
       <Route path="/usersignup" exact component={signup} />
       <Route path="/banklogin" exact component={loginbank} />
