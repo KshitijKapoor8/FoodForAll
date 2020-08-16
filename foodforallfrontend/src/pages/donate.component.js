@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, ProgressBar } from 'react-bootstrap';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
@@ -50,8 +50,10 @@ export class donate extends Component {
             <Card.Text> {card.bankName} </Card.Text>
             <Card.Text> {card.bankAddress} </Card.Text>
             <Card.Text> {card.bankState} </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <ProgressBar now={(card.itemCount / card.itemNeeded) * 100} />
+            <Button  variant="primary">Go somewhere</Button>
           </Card.Body>
+          
         </Card>
         
       );
