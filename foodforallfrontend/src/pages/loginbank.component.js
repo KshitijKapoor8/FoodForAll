@@ -15,7 +15,7 @@ export class loginbank extends Component {
     this.enterPassword = this.enterPassword.bind(this);
 
     this.context = {
-      username:""
+      email:""
     }
 
     this.state = {
@@ -42,7 +42,7 @@ export class loginbank extends Component {
     e.preventDefault();
 
     const user = {
-      username: this.state.username,
+      email: this.state.email,
       password: this.state.password,
     };
 
