@@ -7,19 +7,19 @@ export class loginuser extends Component {
     super(props);
 
     this.onSubmit = this.onSubmit.bind(this);
-    this.enterUsername = this.enterUsername.bind(this);
+    this.enterEmail = this.enterEmail.bind(this);
     this.enterPassword = this.enterPassword.bind(this);
 
     this.state = {
-      username: '',
+      email: '',
       password: '',
       error: false,
     };
   }
 
-  enterUsername(e) {
+  enterEmail(e) {
     this.setState({
-      username: e.target.value,
+      email: e.target.value,
     });
   }
 
@@ -33,37 +33,45 @@ export class loginuser extends Component {
     e.preventDefault();
 
     const user = {
-      email: this.state.username,
+      email: this.state.email,
       password: this.state.password,
     };
 
     this.setState({
-      username: '',
+      email: '',
+      password: ''
     });
 
     axios
       .post('http://localhost:5000/users/login', user)
+<<<<<<< HEAD
       .then((res) => {
         console.log(res.data);
         this.context.username = user.username;
       })
       .catch((err) => console.log('Error: ' + err));
+=======
+      .then((res) => console.log(res.data))
+      .catch((err) => alert("404 Not Found")({
+      }));
+>>>>>>> f644c0fa960b026d485683a10329a813fa906217
 
+      
   }
 
   render() {
     return (
       <div>
-        <h3 class="text-center">Login</h3>
+        <h3 class="text-center">User Login</h3>
         <form onSubmit={this.onSubmit} class="col-lg-6 offset-lg-3 ">
           <div className="form-group">
-            <label>Username: </label>
+            <label>Email: </label>
             <input
               type="text"
               required
               className="form-control"
-              value={this.state.username}
-              onChange={this.enterUsername}
+              value={this.state.email}
+              onChange={this.enterEmail}
             />
             <label>Password: </label>
             <input

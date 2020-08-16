@@ -133,8 +133,7 @@ export class signup extends Component {
     axios
     .post('http://localhost:5000/users/add', user)
     .then((res) => console.log(res.data))
-    .catch((err) => console.log('Error: ' + err));
-    console.log(user);
+    .catch((err) => alert("404 Not Found"));
 
    
 
