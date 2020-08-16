@@ -59,7 +59,7 @@ function home() {
           <Card border="success" style={{ width: '18rem' }}>
             <Card.Img variant="top" />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Our Mission</Card.Title>
               <Card.Text>
                 This card has supporting text below as a natural lead-in to
                 additional content.{" "}
