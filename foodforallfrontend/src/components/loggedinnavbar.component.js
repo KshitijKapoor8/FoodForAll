@@ -8,7 +8,7 @@ import { Button, Card, ProgressBar } from "react-bootstrap";
 import login from '../pages/loginuser.component.js';
 import loginbank from '../pages/loginbank.component.js'
 
-function checkUserType(){
+function checkUserType(){ //Check what type of user is logged in
     if(localStorage.getItem('checkiflogged', window.$loggedin) === 'bank')
     {
         return <Link to="/postcreation" className="nav-link h4">Create A Request</Link>;
@@ -18,7 +18,7 @@ function checkUserType(){
 }
 
 export default class navbar extends Component {
-    render() {
+    render() { //Render the navbar for the user who is logged in
         return (
             <div class="p-3 mb-2 bg-success text-white">
             <nav className="navbar navbar-light bg-green navbar-expand-lg" >

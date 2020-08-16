@@ -60,7 +60,7 @@ export class donate extends Component {
 
             <ProgressBar now={(card.itemCount / card.itemNeeded) * 100} />
             <InputGroup className="mt-5">
-              <FormControl aria-describedby="basic-addon2" />
+              <FormControl aria-describedby="basic-addon2"  inputRef={ref => { this.myInput = ref; }} />
               <InputGroup.Append>
                 <Button variant="primary">Thank You</Button>
               </InputGroup.Append>

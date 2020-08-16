@@ -8,7 +8,7 @@ import loginbank from '../pages/loginbank.component.js'
 
 
 export default class navbar extends Component {
-    render() {
+    render() { //Render the form for user
         return (
             <div class="p-3 mb-2 bg-success text-white">
             <nav className="navbar navbar-light bg-green navbar-expand-lg" >

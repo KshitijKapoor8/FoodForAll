@@ -3,24 +3,23 @@ import GoogleMapReact from "google-map-react";
 import Marker from "./Marker";
 import { Map, InfoWindow, GoogleApiWrapper } from "google-maps-react";
 
-// Texas, New Mexico, Washington, Oaklahoma, Arizona, Idaho, Colorado, California
-const SimpleMap = (props: any) => {
+const SimpleMap = (props: any) => { //Sets the starting location of map
   const [center, setCenter] = useState({ lat: 11.0168, lng: 76.9558 });
   const [zoom, setZoom] = useState(11);
 
   return (
     <div style={{ height: "100vh", width: "100%", }}>
-      <GoogleMapReact
+      <GoogleMapReact //API key with center
         bootstrapURLKeys={{ key: "AIzaSyAntY_MMkHE82gDr-VfdpuEpMypD8J7WrA" }}
         center={{ lat: 29.749907, lng: -95.358421 }}
         defaultZoom={zoom}
-      >
-        <Marker
+      >    
+        <Marker //Markers for food bank
           lat={29.78067}
           lng={-95.27453}
           name={"535 Portwall Street, Houston Food Bank"}
           color="Red"
-        />
+        /> 
         <Marker
           lat={29.41704}
           lng={-98.59166}
@@ -149,7 +148,7 @@ const SimpleMap = (props: any) => {
         />
         <Marker
           lat={39.513939}
-          lng={-104.765842}
+          lng={-104.765842} 
           name="245 South Nina Drive, Phoenix Food Bank"
           color="Red"
         />

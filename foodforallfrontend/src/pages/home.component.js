@@ -4,7 +4,7 @@ import image from "../hiker.svg";
 import { Card, CardDeck } from "react-bootstrap";
 import "../App.css";
 
-const pBottomStyle = {
+const pBottomStyle = { 
   background: "#000",
   height: "1000px",
   margin: "0"
