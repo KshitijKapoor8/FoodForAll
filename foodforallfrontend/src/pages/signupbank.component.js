@@ -69,11 +69,13 @@ export class signupbank extends Component {
     this.confirmPassword = this.confirmPassword.bind(this);
     this.enterState = this.enterState.bind(this);
     this.enteraddress = this.enteraddress.bind(this);
+    this.enterEmail = this.enterEmail.bind(this);
 
     this.state = {
       username: "",
       password: "",
       confirmPassword: "",
+      email: "",
       address: "",
       stateLocation: "Choose State",
       error: false,
@@ -111,6 +113,12 @@ export class signupbank extends Component {
     });
   }
 
+  enterEmail(e) {
+    this.setState({
+      email: e.target.value,
+    });
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
@@ -118,6 +126,7 @@ export class signupbank extends Component {
       username: this.state.username,
       password: this.state.password,
       confirmPassword: this.state.confirmPassword,
+      email: this.state.email,
       address: this.state.address,
       stateLocation: this.state.stateLocation,
     };
@@ -126,6 +135,7 @@ export class signupbank extends Component {
       username: "",
       password: "",
       confirmPassword: "",
+      email: "",
       address: "",
       stateLocation: "",
     });
@@ -176,6 +186,14 @@ export class signupbank extends Component {
               className="form-control"
               value={this.state.address}
               onChange={this.enteraddress}
+            />
+            <label>Enter Email: </label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              value={this.state.email}
+              onChange={this.enterEmail}
             />
             <label>Enter State: </label>
             <Select
