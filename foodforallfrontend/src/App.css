@@ -1,5 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');body {
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+body {
   font-family: 'Alata', sans-serif;
   padding: 0; margin: 0;
   overflow-x: hidden; 
+}
+
+div.transbox{
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.7;
+}
+
+div.transbox h1{
+  left: 50%;
+  top: 50%;
+  font-weight: bold;
+  color: #000000;
+  margin: auto;
+}
+
+div.transbox h4{
+  color: #000000;
+}
+
+div.image1{
+  /* background-image: url(./image1.jpg); */
+  width:'25rem'; 
+  height:'25rem'; 
+  border:"2px solid black";
 }
