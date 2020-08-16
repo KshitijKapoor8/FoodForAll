@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Button,
   Card,
   ProgressBar,
   InputGroup,
   FormControl,
-} from "react-bootstrap";
-import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
+} from 'react-bootstrap';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 
 export class donate extends Component {
   constructor(props) {
@@ -19,10 +19,17 @@ export class donate extends Component {
 
     this.state = {
       posts: [],
+      bankName: '',
+      bankAddress: '',
+      bankState: '',
+      item: '',
+      itemCount: '',
+      itemNeeded: '',
     };
 
+    //var x = localStorage.getItem('bankToken', window.$bankToken);
     axios
-      .get("http://localhost:5000/posts/")
+      .get('http://localhost:5000/posts/')
       .then((response) => {
         this.setState({
           posts: response.data,
@@ -32,24 +39,25 @@ export class donate extends Component {
       .catch((error) => {
         console.log(error);
       });
-  }
 
-  //   donate(id) {
-  //     axios.post('http://localhost:5000/posts/' + id).then((response) => {
-  //       console.log(response.data);
-  //     });
+    
+    }
+
+  donate(id) {
+
+  }
 
   render() {
     const renderCard = (card, index) => {
       return (
         <Card
           className="mb-3"
-          border="success"
+          border="dark"
           text="dark"
           style={{
-            width: "99%",
-            height: "25rem",
-            align: "right",
+            width: '60%',
+            height: '17.6rem',
+            margin: 'auto',
           }}
         >
           <Card.Body>
@@ -59,10 +67,35 @@ export class donate extends Component {
             <Card.Text> {card.bankState} </Card.Text>
 
             <ProgressBar now={(card.itemCount / card.itemNeeded) * 100} />
-            <InputGroup className="mt-5">
+            <InputGroup className="mt-4" style={{ width: '20%' }}>
               <FormControl aria-describedby="basic-addon2" />
               <InputGroup.Append>
-                <Button variant="primary">Thank You</Button>
+                <button
+                  style={{
+                    backgroundColor: '#007bff',
+                    borderRadius: '6px',
+                    border: '5px',
+                  }}
+                  variant="primary"
+                  onClick = {(id) => {
+                    console.log('hello');
+                    const obj = {
+
+                      bankName: card.bankName,
+                      bankAddress: card.bankAddress,
+                      bankState: card.bankState,
+                      item: card.item,
+                      itemCount: card.itemCount,
+                      itemNeeded: card.itemNeeded
+
+                    }
+                    axios.post('http://localhost:5000/posts/update/' + card._id, obj).then((response) => {
+                      console.log(response.data);
+                      });
+                  }}
+                >
+                  Donate!
+                </button>
               </InputGroup.Append>
             </InputGroup>
           </Card.Body>
