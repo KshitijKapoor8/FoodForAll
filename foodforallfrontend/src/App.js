@@ -22,14 +22,15 @@ const mapStyles = {
 
 
 window.$switchNav = function switchNav(){
-        console.log(localStorage.getItem("checkiflogged", window.$loggedin));
-        if(localStorage.getItem("checkiflogged", window.$loggedin))
-        {
-          return <Loggedinnavbar/>;
-        }
-
-        return <Navbar/>;
-      }
+  if(localStorage.getItem("checkiflogged", window.$loggedin) === 'true')
+  {
+    return <Loggedinnavbar/>;
+  }
+  else
+  {
+    return <Navbar/>;
+  }
+}
 
 
 function App() {

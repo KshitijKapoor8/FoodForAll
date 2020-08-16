@@ -36,7 +36,7 @@ export default class navbar extends Component {
 
                 <ul className = "nav navbar-nav ml-auto">
                     <li className="navbar-item">
-                        <button  onClick = {() => {window.$loggedin=false; localStorage.setItem("checkiflogged", window.$loggedin); window.$switchNav(); window.location = '/';}} className="nav-link h4">Logout</button>
+                        <button  onClick = {() => {window.$loggedin=false; localStorage.setItem("checkiflogged", window.$loggedin); console.log(window.$loggedin); window.location='/'; }} className="nav-link h4">Logout</button>
                     </li>
                 </ul>
             </nav>
