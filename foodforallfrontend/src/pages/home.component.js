@@ -42,7 +42,7 @@ function home() {
                   
         )}
       >
-        <div style={{ height: 900 }}>
+        <div style={{ height: 835 }}>
 
         </div>
       </Parallax>

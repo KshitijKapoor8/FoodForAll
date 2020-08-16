@@ -5,15 +5,19 @@ import Marker from "./Marker";
 //const AnyReactComponent = ({text}: any) => <div>{text}</div>;
 // Texas, New Mexico, Washington, Oaklahoma, Arizona, Idaho, Colorado, California
 const SimpleMap = (props: any) => {
+  
   const [center, setCenter] = useState({ lat: 11.0168, lng: 76.9558 });
   const [zoom, setZoom] = useState(11);
+  
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyAntY_MMkHE82gDr-VfdpuEpMypD8J7WrA" }}
         center={{ lat: 29.749907, lng: -95.358421 }}
         defaultZoom={zoom}
+        
       > 
+      
         <Marker lat={29.780670} lng={-95.274530} text="535 Portwall Street, Houston Food Bank" color="Red" />
         <Marker lat={29.417040} lng={-98.591660} name="5200 Enrique M Barrera Pkwy, San Antonio Food Bank" color="Red" />
         <Marker lat={33.003270} lng={-96.760090} text="3677 Mapleshade Lane, Dallas Food Bank" color="Red" />
@@ -33,6 +37,7 @@ const SimpleMap = (props: any) => {
       </GoogleMapReact>
     </div>
   );
+  
 };
 
 export default SimpleMap;
