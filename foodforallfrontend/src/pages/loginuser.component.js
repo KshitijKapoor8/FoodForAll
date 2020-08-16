@@ -51,20 +51,16 @@ export class loginuser extends Component {
     window.$loggedin = true;
     console.log(localStorage.setItem("checkiflogged", window.$loggedin));
     axios
-      .post("http://localhost:5000/users/login", user)
-      .then((res) => {
-        localStorage.setItem("checkiflogged", window.$loggedin);
-        window.location = "/";
-        window.$userToken = res.data;
-        console.log(window.$userToken);
-        console.log(window.$loggedin);
-        window.$switchNav();
-      })
-      .catch((err) =>
-        this.setState({
-          error: "Your username or passward was incorrect " + err,
-        })
-      );
+      .post('http://localhost:5000/users/login', user)
+      .then((res) => {window.$loggedin=true; localStorage.setItem("checkiflogged", window.$loggedin); window.$userToken=res.data; console.log(window.$userToken);  console.log(window.$loggedin); window.location = '/';})
+      .catch((err) => this.setState({
+        error: "Your username or passward was incorrect "+err 
+      }));
+
+      
+      
+
+      
   }
 
   render() {
