@@ -43,6 +43,7 @@ export class postcreation extends Component {
     this.enteritemNeeded = this.enteritemNeeded.bind(this);
 
     this.state = {
+      bankID: '',
       bankName: '',
       bankAddress: '',
       bankState: '',
@@ -55,7 +56,7 @@ export class postcreation extends Component {
     axios
       .get('http://localhost:5000/banks/' + x)
       .then((res) => {
-        this.setState({bankName : res.data.bankName, bankAddress : res.data.address, bankState : res.data.stateLocation, itemCount : 0});
+        this.setState({bankID: x, bankName : res.data.bankName, bankAddress : res.data.address, bankState : res.data.stateLocation, itemCount : 0});
       })
       .catch((err) => {
         console.log('Error :' + err);
