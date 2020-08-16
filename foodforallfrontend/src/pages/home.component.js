@@ -48,29 +48,25 @@ function home() {
       </Parallax>
       <div style={{ height: "3vh",margin: "0" }}></div>
         <CardDeck>
-          <Card className="mx-auto; " border="success" style={{ width: '18rem' }}>
-            <Card.Img variant="top" />
+          <Card border="success" style={{ width: "9rem" , height: "36rem"}}>
             <Card.Body>
               <Card.Title>Features!</Card.Title>
               <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+                
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card border="success" style={{ width: '18rem' }}>
-            <Card.Img variant="top" />
+          <Card border="success" style={{ width: "9rem" }}>
+            
             <Card.Body>
               <Card.Title>Our Mission</Card.Title>
               <Card.Text>
               We wish to see a community in which people are able to get sufficent food and resources.
-              We believe that access to healthy nutritious food is a basic human right. {" "}
+              We believe that access to healthy nutritious food is a basic human right. 
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card border="success" style={{ width: '18rem' }}>
-            <Card.Img variant="top" />
+          <Card border="success" style={{ width: "9rem" }}>
             <Card.Body>
               <Card.Title>Coming Soon!</Card.Title>
               <Card.Text>
