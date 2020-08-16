@@ -18,7 +18,7 @@ const mapStyles = {
   height: "100%",
 };
 window.$switchNav = function switchNav() {
-  if (localStorage.getItem("checkiflogged", window.$loggedin) === 'true') {
+  if (localStorage.getItem("checkiflogged", window.$loggedin) === 'user' || localStorage.getItem("checkiflogged", window.$loggedin) === 'bank') {
     return <Loggedinnavbar />;
   }
   return <Navbar />;

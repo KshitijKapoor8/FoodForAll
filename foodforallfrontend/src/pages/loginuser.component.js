@@ -8,7 +8,7 @@ import App from "../App.js";
 import Loggedinnavbar from "../components/loggedinnavbar.component.js";
 
 window.$userToken = "";
-window.$loggedin = false;
+window.$loggedin = '';
 
 export class loginuser extends Component {
   constructor(props) {
@@ -48,11 +48,9 @@ export class loginuser extends Component {
       email: "",
       password: "",
     });
-    window.$loggedin = true;
-    console.log(localStorage.setItem("checkiflogged", window.$loggedin));
     axios
       .post('http://localhost:5000/users/login', user)
-      .then((res) => {window.$loggedin=true; localStorage.setItem("checkiflogged", window.$loggedin); window.$userToken=res.data; localStorage.setItem("userToken", window.$userToken); console.log(window.$userToken);  console.log(window.$loggedin); window.location = '/';})
+      .then((res) => {window.$loggedin='user'; localStorage.setItem("checkiflogged", window.$loggedin); window.$userToken=res.data; localStorage.setItem("userToken", window.$userToken); console.log(window.$userToken);  console.log(window.$loggedin); window.location = '/';})
       .catch((err) => this.setState({
         error: "Your username or passward was incorrect " 
       }));
