@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  ButtonGroup,
-  DropdownButton,
-  MenuItem,
-  Card,
-} from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
@@ -15,13 +9,12 @@ export class donate extends Component {
   constructor(props) {
     super(props);
 
-    this.donate = this.donate.bind(this);
-    this.addName = this.addName.bind(this);
+    // this.donate = this.donate.bind(this);
+    // this.addName = this.addName.bind(this);
 
-    this.state = { 
-        posts: [],
-        bank: []
-     };
+    this.state = {
+      posts: [],
+    };
 
     axios
       .get('http://localhost:5000/posts/')
@@ -34,51 +27,33 @@ export class donate extends Component {
       .catch((error) => {
         console.log(error);
       });
-
-
-    this.state.posts.forEach((post) => {
-        const x = post.bank;
-        console.log("hello");
-        axios
-          .get('/banks/' + x)
-          .then((res) => {
-            this.setState({
-                banks: this.state.banks.push(res.data)
-            })
-            console.log(res.data);
-          })
-          .catch((err) => console.log('Error: ' + err));
-      });
-
-    console.log(this.state.banks);
   }
 
-  componentDidMount() {
-    
-  }
-
-  donate(id) {
-    axios.post('http://localhost:5000/posts/' + id).then((response) => {
-      console.log(response.data);
-    });
-
-    this.setState({
-      exercises: this.state.exercises.filter((el) => el._id !== id),
-    });
-  }
-
-  addName(post, index) {}
+  //   donate(id) {
+  //     axios.post('http://localhost:5000/posts/' + id).then((response) => {
+  //       console.log(response.data);
+  //     });
 
   render() {
     const renderCard = (card, index) => {
       return (
-        <Card style={{ width: '18rem' }}>
+        <Card
+          className="ml-5"
+          style={{
+            width: '100rem',
+            height: '14.7rem',
+            align: 'center',
+          }}
+        >
           <Card.Body>
             <Card.Title>{card.item}</Card.Title>
-            <Card.Text> {card.bank} </Card.Text>
+            <Card.Text> {card.bankName} </Card.Text>
+            <Card.Text> {card.bankAddress} </Card.Text>
+            <Card.Text> {card.bankState} </Card.Text>
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>
+        
       );
     };
 
