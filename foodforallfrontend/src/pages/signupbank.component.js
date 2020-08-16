@@ -4,6 +4,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Select, { components } from 'react-select';
 import makeAnimated from "react-select/animated";
 import axios from 'axios';
+import "../App.css";
+
 
 
 const animatedComponents = makeAnimated();
