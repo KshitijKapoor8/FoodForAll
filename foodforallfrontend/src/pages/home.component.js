@@ -51,7 +51,7 @@ function home() {
           <Card className="mx-auto; " border="success" style={{ width: '18rem' }}>
             <Card.Img variant="top" />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Features!</Card.Title>
               <Card.Text>
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -72,7 +72,7 @@ function home() {
           <Card border="success" style={{ width: '18rem' }}>
             <Card.Img variant="top" />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Coming Soon!</Card.Title>
               <Card.Text>
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This card has even longer content
