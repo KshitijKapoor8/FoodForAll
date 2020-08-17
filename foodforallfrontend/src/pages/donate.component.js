@@ -102,15 +102,16 @@ handleChange(e) {
                       bankAddress: card.bankAddress,
                       bankState: card.bankState,
                       item: card.item,
-                      itemCount: Number(card.itemCount + this.inputRef),
+                      itemCount: Number(card.itemCount) + Number(this.state.value),
                       itemNeeded: card.itemNeeded
 
                     }
-                    console.log(this.myInput.value);
 
+                    console.log(obj);
                     axios.post('http://localhost:5000/posts/update/' + card._id, obj).then((response) => {
                       console.log(response.data);
-                      });
+                      })
+                      .catch(err => console.log('Error: ' + err))
                   }}
                 >
                   Donate!

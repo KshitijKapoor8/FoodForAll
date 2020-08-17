@@ -23,15 +23,15 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/update/:_id').post((req, res) => {
-    Post.findById(req.params._id)
+router.route('/update/:id').post((req, res) => {
+    Post.findById(req.params.id)
         .then(post => {
-            bankName = req.body.bankName;
-            bankAddress = req.body.bankAddress;
-            bankState = req.body.bankState;
-            item = req.body.item;
-            itemCount = Number(req.body.itemCount);
-            itemNeeded = Number(req.body.itemNeeded);
+            post.bankName = req.body.bankName;
+            post.bankAddress = req.body.bankAddress;
+            post.bankState = req.body.bankState;
+            post.item = req.body.item;
+            post.itemCount = Number(req.body.itemCount);
+            post.itemNeeded = Number(req.body.itemNeeded);
 
             post.save()
                 .then(() => res.json('Post updated!'))
